@@ -4,7 +4,7 @@
 const PROJECTS = [
   {
     name: "Dentiqly", url: "https://dentiqly.com", domain: "dentiqly.com",
-    bg: "#0c2347", fg: "#f3f1ea", hl: "#6f9bff", acc: "glasses",
+    bg: "#0c2347", fg: "#f3f1ea", hl: "#6f9bff",
     steps: [
       { d: "dentiqly-d0", m: "dentiqly-m0",
         es: "Primero, **Dentiqly**. Un SaaS para clínicas dentales que cofundé.",
@@ -22,7 +22,7 @@ const PROJECTS = [
   },
   {
     name: "Pulso Research", url: "https://pulsoresearch.com", domain: "pulsoresearch.com",
-    bg: "#e2ff3d", fg: "#111", hl: "#5a5f00", acc: "headset", light: true,
+    bg: "#e2ff3d", fg: "#111", hl: "#5a5f00", light: true,
     steps: [
       { d: "pulso-d0", m: "pulso-m0",
         es: "Después, **Pulso Research**, una consultora de opinión pública.",
@@ -40,7 +40,7 @@ const PROJECTS = [
   },
   {
     name: "Martín Virasoro", url: "https://martinvirasoro.com", domain: "martinvirasoro.com",
-    bg: "#24443a", fg: "#f3f1ea", hl: "#d9b26a", acc: "mate",
+    bg: "#24443a", fg: "#f3f1ea", hl: "#d9b26a",
     steps: [
       { d: "virasoro-d0", m: "virasoro-m0",
         es: "Este es de **Martín Virasoro**, autor y creador del Método RAM.",
@@ -52,13 +52,13 @@ const PROJECTS = [
         es: "Cursos, podcast y retiros, **cada cosa con su página**.",
         en: "Courses, podcast and retreats, **each with its own page**." },
       { d: "virasoro-d5", m: "virasoro-m0",
-        es: "Abajo, su **Instagram** y el newsletter. Mate de por medio.",
-        en: "At the bottom, his **Instagram** and the newsletter. Mate included." },
+        es: "Y abajo, su **Instagram** y el newsletter para no perderse nada.",
+        en: "At the bottom, his **Instagram** and the newsletter so you miss nothing." },
     ],
   },
   {
     name: "Wildcat Club", url: "https://www.wildcat.club/", domain: "wildcat.club",
-    bg: "#e9dfcf", fg: "#1c2a26", hl: "#a8673b", acc: "cowboy", light: true,
+    bg: "#e9dfcf", fg: "#1c2a26", hl: "#a8673b", light: true,
     steps: [
       { d: "wildcat-d0", m: "wildcat-m0",
         es: "Último: **Wildcat Club**, seis residencias de lujo en Austin, Texas. Yeehaw.",
@@ -133,8 +133,9 @@ const T = {
       work: "Acá está **todo** lo que hice.",
       contact: "Psst. Podés **agarrarme**.",
       copy: "Escribime cuando quieras. **Hacé click** y se copia.",
-      grab: ["¡Epa! **Bajame** despacio.", "Wiii, ¡estoy **volando**!", "Ojo, que se me vuelca el **mate**."],
-      dress: "¿Me queda **bien**?", trick: "¡**Tadá**!",
+      grab: ["¡Epa! **Bajame** despacio.", "Wiii, ¡estoy **volando**!", "¡Ey! Que me **despeinás**."],
+      trick: "¡**Tadá**!",
+      styles: { color: "Volví a mis **colores**.", pixel: "Modo **pixel**. ¿Te suena de algún lado?", duo: "Modo **lofi**. Ponete unos auriculares." },
     },
   },
   en: {
@@ -155,8 +156,9 @@ const T = {
       work: "Here's **everything** I've made.",
       contact: "Psst. You can **grab** me.",
       copy: "Write me anytime. **Click** and it's copied.",
-      grab: ["Hey! Put me **down** gently.", "Wheee, I'm **flying**!", "Careful, my **mate** will spill."],
-      dress: "Does this **suit** me?", trick: "**Ta-da**!",
+      grab: ["Hey! Put me **down** gently.", "Wheee, I'm **flying**!", "Hey! You're messing up my **hair**."],
+      trick: "**Ta-da**!",
+      styles: { color: "Back to my **colours**.", pixel: "**Pixel** mode. Looks familiar?", duo: "**Lofi** mode. Grab your headphones." },
     },
   },
 };
@@ -261,7 +263,7 @@ const uniq = (a) => [...new Set(a)];
 
 // ---------- personaje y globo ----------
 const buddy = $("#buddy"), bubble = $("#bubble"), bubbleText = $("#bubbleText");
-Character.mount($("#buddyCanvas"));
+Character.mount($("#buddyCanvas"), (n) => (window.IMG_DATA && window.IMG_DATA[n]) || `${IMG_BASE}${n}.webp`);
 let typing = null, mouthTimer = null;
 
 function say(text) {
@@ -284,30 +286,29 @@ function say(text) {
   }, 32);
 }
 
-function place(pos, acc) {
+function place(pos) {
   buddy.classList.remove("pos-left", "pos-right", "pos-avatar");
   buddy.classList.add(`pos-${pos}`);
-  if (acc !== undefined && !dressed) Character.set({ acc });
 }
 
 // ---------- escenas ----------
-let scenes = [], current = null, dressed = false;
+let scenes = [], current = null;
 function sceneKey(el) { return el.dataset.scene === "step" ? `step-${el.dataset.p}-${el.dataset.s}` : el.dataset.scene; }
 
 function enter(el) {
   const s = el.dataset.scene, S = t("say");
   document.documentElement.style.setProperty("--hl", "var(--blue)");
-  if (s === "hero") { place("right", "none"); say(S.hero); }
-  else if (s === "about") { place("left", "none"); say(""); }
+  if (s === "hero") { place("right"); say(S.hero); Character.wave(1400); }
+  else if (s === "about") { place("left"); say(""); }
   else if (s === "step") {
     const p = PROJECTS[+el.dataset.p], step = p.steps[+el.dataset.s];
     document.documentElement.style.setProperty("--hl", p.hl);
-    place(+el.dataset.p % 2 ? "right" : "left", p.acc);
+    place(+el.dataset.p % 2 ? "right" : "left");
     say(step[lang]);
     const proj = el.closest(".proj");
     proj.querySelectorAll(".shot").forEach((im) => im.classList.toggle("on", im.dataset.shot === step.d || im.dataset.shot === step.m));
-  } else if (s === "contact") { place("right", "none"); say(S.contact); }
-  else { place("avatar", "none"); say(S[s]); }
+  } else if (s === "contact") { place("right"); say(S.contact); Character.wave(1400); }
+  else { place("avatar"); say(S[s]); }
 }
 
 function onScroll() {
@@ -338,7 +339,7 @@ canvas.addEventListener("pointerdown", (e) => {
   hold = { x: e.clientX, y: e.clientY };
   buddy.classList.add("held");
   canvas.style.transition = "none";
-  Character.set({ eyes: "happy" });
+  Character.set({ waving: true });
   const g = t("say").grab; say(g[Math.floor(Math.random() * g.length)]);
 });
 canvas.addEventListener("pointermove", (e) => {
@@ -351,21 +352,19 @@ const drop = () => {
   hold = null; buddy.classList.remove("held");
   canvas.style.transition = "transform .6s cubic-bezier(.3, 1.6, .5, 1)";
   canvas.style.transform = "";
-  Character.set({ eyes: "open" });
+  Character.set({ waving: false });
 };
 canvas.addEventListener("pointerup", drop);
 canvas.addEventListener("pointercancel", drop);
 
 // ---------- vestir y truco ----------
-const OUTFITS = ["cap", "beanie", "cowboy", "glasses", "headset", "mate", "none"];
-let outfit = -1;
 $("#dress").addEventListener("click", () => {
-  outfit = (outfit + 1) % OUTFITS.length; dressed = OUTFITS[outfit] !== "none";
-  Character.set({ acc: OUTFITS[outfit] }); say(t("say").dress);
+  const style = Character.nextStyle();
+  say(t("say").styles[style]);
 });
 $("#trick").addEventListener("click", () => {
   buddy.classList.remove("trick"); void buddy.offsetWidth; buddy.classList.add("trick");
-  Character.set({ eyes: "happy" }); setTimeout(() => Character.set({ eyes: "open" }), 1000);
+  Character.wave(1000);
   say(t("say").trick);
 });
 
@@ -381,7 +380,7 @@ document.addEventListener("pointerover", (e) => {
 let lastTech = null;
 document.addEventListener("click", (e) => {
   const l = e.target.closest(".lang");
-  if (l) say(LANGS[l.dataset.i].hello);
+  if (l) { say(LANGS[l.dataset.i].hello); Character.wave(1200); }
 });
 
 const mail = $("#mail");

@@ -75,27 +75,31 @@ h1, h2, h3 { margin: 0; font-stretch: 112%; letter-spacing: -.035em; line-height
 
 /* ---------- personaje ---------- */
 .buddy {
-  --bw: clamp(220px, 30vw, 430px);
+  --bw: clamp(240px, 34vw, 500px);
   --bx: calc(100vw - var(--bw) - 4vw);
   position: fixed; z-index: 40; bottom: 0; left: 0; width: var(--bw);
   transform: translateX(var(--bx));
   transition: transform .9s cubic-bezier(.6, 0, .2, 1), width .6s cubic-bezier(.6, 0, .2, 1), bottom .6s;
   touch-action: none; user-select: none; -webkit-user-select: none;
 }
-.buddy.pos-left { --bx: 3vw; }
+.buddy.pos-left { --bx: 2vw; }
 .buddy.pos-avatar { --bw: 86px; --bx: var(--gutter); bottom: 20px; }
+.buddy__frame { transition: border-radius .4s, box-shadow .4s; }
+.buddy.pos-avatar .buddy__frame { border-radius: 50%; overflow: hidden; background: var(--paper); box-shadow: 0 0 0 3px var(--blue); aspect-ratio: 1; }
+.buddy.pos-avatar .buddy__canvas { transform: scale(2) translate(-6%, 22%); }
 .buddy__canvas {
-  display: block; width: 100%; height: auto; image-rendering: pixelated; cursor: grab;
-  transform-origin: 50% 100%; transition: border-radius .4s;
+  display: block; width: 100%; height: auto; aspect-ratio: 1; cursor: grab;
+  transform-origin: 50% 100%; transition: transform .5s;
+  animation: breathe 4.5s ease-in-out infinite;
 }
-.buddy.pos-avatar .buddy__canvas { border-radius: 50%; background: var(--paper); box-shadow: 0 0 0 3px var(--blue); aspect-ratio: 1; object-fit: cover; object-position: center 25%; }
-.buddy.held .buddy__canvas { cursor: grabbing; }
-.buddy.trick .buddy__canvas { animation: trick 1s cubic-bezier(.5, 0, .3, 1); }
+.buddy.held .buddy__canvas { cursor: grabbing; animation: none; }
+.buddy.trick .buddy__frame { animation: trick 1s cubic-bezier(.5, 0, .3, 1); transform-origin: 50% 100%; }
+@keyframes breathe { 50% { scale: 1.012 1.02; } }
 @keyframes trick { 30% { transform: translateY(-30%) rotate(-10deg); } 70% { transform: translateY(-30%) rotate(370deg); } 100% { transform: rotate(360deg); } }
-@media (max-width: 760px) { .buddy { --bw: 170px; } .buddy.pos-avatar { --bw: 60px; } }
+@media (max-width: 760px) { .buddy { --bw: 200px; } .buddy.pos-avatar { --bw: 60px; } }
 
 .bubble {
-  position: absolute; bottom: 88%; left: 50%; translate: -62% 0;
+  position: absolute; bottom: 97%; left: 50%; translate: -62% 0;
   width: max-content; max-width: min(360px, 76vw);
   background: var(--paper); color: var(--ink); border-radius: 22px;
   padding: 16px 22px; font-size: clamp(17px, 1.5vw, 22px); line-height: 1.2; font-weight: 600; font-stretch: 106%; letter-spacing: -.015em;
