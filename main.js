@@ -10,14 +10,18 @@ const FEATURED = [
     thumb: "thumb-dentiqly.png",
     tags: ["TypeScript", "REST APIs", "React", "PostgreSQL"],
     es: [
-      "Primero, Dentiqly, un SaaS para gestionar clínicas dentales que fundé con un socio.",
-      "Hice el modelo de datos, las APIs REST en TypeScript y las interfaces. Turnos, pacientes, historias clínicas: todo lo que un consultorio usa todos los días tiene que andar rápido y no perder nada.",
+      "Primero, Dentiqly, un SaaS para gestionar clínicas dentales que cofundé.",
+      "Hice el modelo de datos, las APIs REST en TypeScript y las interfaces. Agenda, historias clínicas, odontograma digital y facturación: todo lo que un consultorio usa todos los días tiene que andar rápido y no perder nada.",
     ],
     en: [
       "First up, Dentiqly, a SaaS for running dental clinics that I co-founded.",
-      "I built the data model, the REST APIs in TypeScript and the interfaces. Appointments, patients, records: everything a clinic uses every day has to be fast and never lose a thing.",
+      "I built the data model, the REST APIs in TypeScript and the interfaces. Scheduling, clinical records, a digital odontogram and billing: everything a clinic uses every day has to be fast and never lose a thing.",
     ],
-    noteEs: "este es mío 🦷", noteEn: "this one's mine 🦷",
+    bubbles: [
+      { x: "6%", y: "10%", es: "Turnos online, el paciente reserva solo", en: "Online booking, patients book themselves" },
+      { x: "52%", y: "42%", es: "Odontograma digital, diente por diente", en: "Digital odontogram, tooth by tooth" },
+      { x: "10%", y: "72%", es: "Recordatorios por WhatsApp 📲", en: "WhatsApp reminders 📲" },
+    ],
   },
   {
     name: "Diagnóstico de marca",
@@ -33,33 +37,58 @@ const FEATURED = [
       "Next, a brand diagnostic app for La Cocina de las Marcas.",
       "You answer a questionnaire, the app scores it and shows you in charts where your brand stands. I built the React front, the Node back and the scoring logic that ties them together.",
     ],
-    noteEs: "respondé y te puntúa", noteEn: "answer it, get a score",
+    bubbles: [
+      { x: "6%", y: "10%", es: "Cuestionario paso a paso", en: "Step-by-step questionnaire" },
+      { x: "52%", y: "80%", es: "El scoring lo calcula el back", en: "Scoring runs on the backend" },
+    ],
+  },
+  {
+    name: "Pulso Research",
+    url: "https://pulsoresearch.com",
+    thumb: "thumb-pulso.png",
+    tags: ["WordPress", "Elementor", "Diseño"],
+    es: [
+      "También hice el sitio de Pulso Research, una consultora de opinión pública.",
+      "Tienen un montón de estudios distintos, así que la idea fue ordenarlos: cada indicador tiene su sección y los textos largos se abren solo si los querés leer.",
+    ],
+    en: [
+      "I also built the site for Pulso Research, a public opinion consultancy.",
+      "They have lots of different studies, so the goal was to organize them: each indicator gets its own section and long texts only open if you want to read them.",
+    ],
+    bubbles: [
+      { x: "6%", y: "12%", es: "Ranking de confianza en líderes (RCP)", en: "Trust ranking of leaders (RCP)" },
+      { x: "50%", y: "46%", es: "Paneles “Leer más” que se despliegan", en: "Expandable “Read more” panels" },
+      { x: "8%", y: "74%", es: "Contacto directo por WhatsApp", en: "Contact straight to WhatsApp" },
+    ],
   },
   {
     name: "Martín Virasoro",
     url: "https://martinvirasoro.com",
     thumb: "thumb-virasoro.png",
-    tags: ["Diseño", "Desarrollo web", "Responsive"],
+    tags: ["WordPress", "Elementor", "WooCommerce"],
     es: [
-      "Y por último, el sitio de Martín Virasoro.",
-      "Lo diseñé y lo desarrollé de punta a punta, cuidando que se vea igual de bien en el celu que en una pantalla grande.",
+      "Y por último, el sitio de Martín Virasoro, autor y creador del Método RAM.",
+      "Libros, audiolibros, cursos, podcast y retiros en un solo lugar, con tienda propia para vender todo sin intermediarios.",
     ],
     en: [
-      "And finally, Martín Virasoro's website.",
-      "I designed and built it end to end, making sure it looks just as good on a phone as on a big screen.",
+      "And finally, the site for Martín Virasoro, author and creator of the RAM Method.",
+      "Books, audiobooks, courses, podcast and retreats in one place, with its own shop to sell everything directly.",
     ],
-    noteEs: "este quedó lindo", noteEn: "this one came out nice",
+    bubbles: [
+      { x: "6%", y: "12%", es: "Tienda con carrito (WooCommerce) 🛒", en: "Shop with a cart (WooCommerce) 🛒" },
+      { x: "52%", y: "56%", es: "Cursos, libros y retiros, cada uno con su página", en: "Courses, books and retreats, each with its own page" },
+    ],
   },
 ];
 
 const WORK = [
   { name: "Dentiqly", url: "https://dentiqly.com", thumb: "thumb-dentiqly.png", kind: { es: "SaaS · Cofundador", en: "SaaS · Co-founder" }, year: "2026" },
-  { name: "Diagnóstico de marca", url: null, thumb: null, kind: { es: "App web · La Cocina de las Marcas", en: "Web app · La Cocina de las Marcas" }, year: "2025" },
-  { name: "Pulso Research", url: "https://pulsoresearch.com", thumb: "thumb-pulso.png", kind: { es: "Sitio web", en: "Website" }, year: "" },
-  { name: "Bloomsbury Living", url: "https://bloomsburyliving.com", thumb: "thumb-bloomsbury.png", kind: { es: "Sitio web", en: "Website" }, year: "" },
-  { name: "Wildcat Club", url: "https://www.wildcat.club/", thumb: "thumb-wildcat.png", kind: { es: "Sitio web", en: "Website" }, year: "" },
-  { name: "Catalfumo", url: "https://catalfumo.com", thumb: "thumb-catalfumo.png", kind: { es: "Sitio web", en: "Website" }, year: "" },
-  { name: "Martín Virasoro", url: "https://martinvirasoro.com", thumb: "thumb-virasoro.png", kind: { es: "Sitio web", en: "Website" }, year: "" },
+  { name: "Diagnóstico de marca", url: null, thumb: null, kind: { es: "React + Node · La Cocina de las Marcas", en: "React + Node · La Cocina de las Marcas" }, year: "2025" },
+  { name: "Pulso Research", url: "https://pulsoresearch.com", thumb: "thumb-pulso.png", kind: { es: "Consultora · WordPress", en: "Consultancy · WordPress" }, year: "" },
+  { name: "Martín Virasoro", url: "https://martinvirasoro.com", thumb: "thumb-virasoro.png", kind: { es: "Autor y tienda · WordPress", en: "Author & shop · WordPress" }, year: "" },
+  { name: "Bloomsbury Living", url: "https://bloomsburyliving.com", thumb: "thumb-bloomsbury.png", kind: { es: "Real estate · WordPress", en: "Real estate · WordPress" }, year: "" },
+  { name: "Catalfumo", url: "https://catalfumo.com", thumb: "thumb-catalfumo.png", kind: { es: "Desarrolladora · WordPress", en: "Developer firm · WordPress" }, year: "" },
+  { name: "Wildcat Club", url: "https://www.wildcat.club/", thumb: "thumb-wildcat.png", kind: { es: "Real estate de lujo", en: "Luxury real estate" }, year: "" },
 ];
 
 const STACK = [
@@ -150,7 +179,7 @@ function render() {
       </div>
       <a class="project__media" ${p.url ? `href="${p.url}" target="_blank" rel="noopener"` : ""}>
         ${p.thumb ? `<img src="${ASSETS + p.thumb}" alt="${p.name}" loading="lazy" onerror="this.remove()">` : placeholder(p)}
-        <span class="note">${lang === "es" ? p.noteEs : p.noteEn}</span>
+        ${(p.bubbles || []).map((b) => `<span class="bubble${parseFloat(b.x) > 45 ? " right" : ""}" style="left:${b.x};top:${b.y}">${b[lang]}</span>`).join("")}
       </a>
     </article>`).join("");
 
@@ -187,9 +216,9 @@ function render() {
 }
 
 function placeholder(p) {
-  return `<div style="height:100%;display:grid;place-items:center;background:var(--accent-2)">
+  return `<div style="height:100%;display:grid;place-items:center;background:var(--paper-2)">
     <div style="font-family:var(--display);font-weight:800;font-size:clamp(28px,4vw,48px);text-align:center;line-height:1">
-      ${p.client || p.name}<br><span style="font-family:var(--hand);font-weight:700;color:var(--accent)">✓ 87/100</span></div></div>`;
+      ${p.client || p.name}<br><span style="font-family:var(--hand);font-weight:700;color:var(--accent)">87/100</span></div></div>`;
 }
 
 document.getElementById("lang").addEventListener("click", () => {
