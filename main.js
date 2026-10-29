@@ -84,15 +84,15 @@ const WORK = [
 ];
 
 const STACK = [
-  { es: "Frontend", en: "Frontend", noteEs: "Donde más me divierto.", noteEn: "Where I have the most fun.",
+  { es: "Frontend", en: "Frontend",
     items: [["React", "react"], ["TypeScript", "typescript"], ["JavaScript", "javascript"], ["HTML5", "html5"], ["CSS3", "css3"]] },
-  { es: "Backend", en: "Backend", noteEs: "APIs que no se caen.", noteEn: "APIs that stay up.",
+  { es: "Backend", en: "Backend",
     items: [["Node.js", "nodedotjs"], ["Express", "express"], ["Python", "python"], ["FastAPI", "fastapi"], ["Flask", "flask"], ["PHP", "php"]] },
-  { es: "Datos", en: "Data", noteEs: "Todo empieza por el modelo.", noteEn: "It all starts with the model.",
+  { es: "Datos", en: "Data",
     items: [["PostgreSQL", "postgresql"], ["MySQL", "mysql"], ["SQL", "db"], ["Pandas", "pandas"], ["Power BI", "chart"]] },
-  { es: "Diseño y web", en: "Design & web", noteEs: "Ojo de diseño, manos de dev.", noteEn: "Designer's eye, dev's hands.",
+  { es: "Diseño y web", en: "Design & web",
     items: [["Figma", "figma"], ["Framer", "framer"], ["WordPress", "wordpress"], ["Elementor", "elementor"], ["WooCommerce", "woocommerce"], ["Git", "git"]] },
-  { es: "IA y automatización", en: "AI & automation", noteEs: "Que las máquinas hagan lo aburrido.", noteEn: "Let machines do the boring bits.",
+  { es: "IA y automatización", en: "AI & automation",
     items: [["APIs de IA", "spark", "AI APIs"], ["Integraciones", "plug", "Integrations"], ["Automatizaciones", "bolt", "Automations"], ["REST APIs", "api"]] },
 ];
 
@@ -116,9 +116,9 @@ const EXP = [
 
 const T = {
   es: {
-    role: "Full stack developer · En búsqueda de trabajo", cta: "Contratame",
+    role: "Full stack developer", status: "En búsqueda de trabajo", cta: "Contratame",
     title: "<b>Busco equipo<br>para construir</b><br><i>cosas que andan.</i>",
-    about: "Soy full stack developer en Buenos Aires y busco *sumarme a un equipo de producto*, part time o full time. Desde 2023 hice webs, tiendas y sistemas para clientes, y cofundé un SaaS. Me gusta trabajar de la base de datos a la interfaz, aprender rápido y que lo que hago se vea tan bien como funciona.",
+    about: "Soy un desarrollador full stack en Buenos Aires y busco *sumarme a un equipo de producto*, part time o full time. Desde 2023 hice webs, tiendas y sistemas para clientes, y cofundé un SaaS. Me gusta trabajar de la base de datos a la interfaz, aprender rápido y que lo que hago se vea tan bien como funciona.",
     "stack.title": "Mi stack", "stack.count": "Lo que uso todos los días",
     "langs.title": "Idiomas", "langs.count": "4 idiomas",
     "exp.title": "Experiencia", "exp.count": "Lo más nuevo arriba",
@@ -127,7 +127,7 @@ const T = {
     copied: "¡Copiado!", projects: "proyectos", available: "Disponible para trabajar",
     say: {
       hero: "Hola, soy **Juan** y estoy en búsqueda de trabajo. Bajá que te muestro qué sé hacer.",
-      stack: "Sí, también hago **backend**. Pasá el mouse por los logos.",
+      stack: "Front, back y datos. Esto es lo que uso **todos los días**.",
       langs: "Hablo **4 idiomas**. Tocá uno y te saludo.",
       exp: "Trabajando y estudiando en la **UTN** al mismo tiempo.",
       work: "Todo esto lo hice yo. Imaginate en **tu equipo**.",
@@ -137,7 +137,7 @@ const T = {
     },
   },
   en: {
-    role: "Full stack developer · Open to work", cta: "Hire me",
+    role: "Full stack developer", status: "Open to work", cta: "Hire me",
     title: "<b>Looking for<br>a team to build</b><br><i>things that work.</i>",
     about: "I'm a full stack developer in Buenos Aires looking to *join a product team*, part time or full time. Since 2023 I've built websites, shops and systems for clients, and co-founded a SaaS. I like working from the database to the interface, learning fast, and making things look as good as they work.",
     "stack.title": "My stack", "stack.count": "What I use every day",
@@ -148,7 +148,7 @@ const T = {
     copied: "Copied!", projects: "projects", available: "Open to work",
     say: {
       hero: "Hi, I'm **Juan** and I'm looking for work. Scroll down to see what I can do.",
-      stack: "Yes, I do **backend** too. Hover the logos.",
+      stack: "Front, back and data. This is what I use **every day**.",
       langs: "I speak **4 languages**. Tap one and I'll say hi.",
       exp: "Working and studying at **UTN** at the same time.",
       work: "I built all of this. Picture me on **your team**.",
@@ -223,7 +223,7 @@ function render() {
 
   $("#stackList").innerHTML = STACK.map((g, gi) => `
     <div class="stack__row">
-      <div><h3>${g[lang]}</h3><p>${lang === "es" ? g.noteEs : g.noteEn}</p></div>
+      <h3>${g[lang]}</h3>
       <div class="stack__items">${g.items.map(([name, key, nameEn]) => `<button class="tech" data-g="${gi}">${icon(key)}<span>${lang === "en" && nameEn ? nameEn : name}</span></button>`).join("")}</div>
     </div>`).join("");
 
@@ -353,15 +353,6 @@ canvas.addEventListener("pointerup", drop);
 canvas.addEventListener("pointercancel", drop);
 
 // ---------- interacciones de las secciones ----------
-document.addEventListener("pointerover", (e) => {
-  const tech = e.target.closest(".tech");
-  if (tech && tech !== lastTech) {
-    lastTech = tech;
-    const g = STACK[tech.dataset.g];
-    say(`**${tech.textContent.trim()}**. ${lang === "es" ? g.noteEs : g.noteEn}`);
-  }
-});
-let lastTech = null;
 document.addEventListener("click", (e) => {
   const l = e.target.closest(".lang");
   if (l) { say(LANGS[l.dataset.i].hello); Character.wave(1200); }

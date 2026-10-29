@@ -53,7 +53,7 @@ async function hideCookies(page) {
         await desk.screenshot({ path: `shots/raw/${name}-d${i}.jpg`, type: "jpeg", quality: 80 });
       }
       await desk.close();
-      const ctx = await browser.newContext({ ...devices["iPhone 13"] });
+      const ctx = await browser.newContext({ ...devices["iPhone 13"], viewport: { width: 390, height: 844 } });
       const mob = await ctx.newPage();
       await mob.goto(url, { waitUntil: "networkidle", timeout: 60000 });
       await settle(mob);
