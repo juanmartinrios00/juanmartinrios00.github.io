@@ -15,6 +15,7 @@ jobs:
         with: { node-version: 20 }
       - run: npm i --no-save playwright@1.47.2 && npx playwright install --with-deps chromium
       - run: node tools/shots.js
+      - run: curl -sSL -o "shots/raw/cv.pdf" "https://juanmartinrios.netlify.app/assets/Juan%20Martin%20Rios%20-%20CV.pdf" || true
       - name: Subir capturas a la rama capturas
         run: |
           cd shots/raw
