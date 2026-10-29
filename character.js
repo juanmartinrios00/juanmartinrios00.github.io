@@ -1,11 +1,11 @@
-// Personaje: la ilustración de Juan, quieta. Los otros fotogramas (parpadeo, saludo, hablando)
-// quedan cargables poniendo ANIMATED en true.
+// Personaje: la ilustración de Juan. Queda quieta salvo la boca, que se mueve mientras se escribe el globo.
+// El parpadeo y el saludo quedan disponibles poniendo ANIMATED en true.
 // Se pinta en un canvas y se pasa por un dither 8x8 en blanco y negro (estilo "pixel").
 // Con style: "color" se ve la ilustración original.
 const Character = (() => {
   const ANIMATED = false;
-  const FRAMES = ANIMATED ? { base: "juan-base", blink: "juan-blink", wave: "juan-wave", talk: "juan-talk" } : { base: "juan-base" };
-  const SIZE = { color: 640, pixel: 260 };
+  const FRAMES = ANIMATED ? { base: "juan-base", blink: "juan-blink", wave: "juan-wave", talk: "juan-talk" } : { base: "juan-base", talk: "juan-talk" };
+  const SIZE = { color: 640, pixel: 440 };
   const INK = [17, 17, 17], PAPER = [243, 241, 234];
 
   const BAYER = [
@@ -39,7 +39,7 @@ const Character = (() => {
         if (d[i + 3] < 110) { d[i + 3] = 0; continue; }
         let l = (d[i] * 0.3 + d[i + 1] * 0.59 + d[i + 2] * 0.11) / 255;
         // levanta los negros para que la remera se lea sobre fondos oscuros
-        l = Math.min(1, 0.2 + Math.max(0, l - 0.08) * 1.3);
+        l = Math.min(1, 0.14 + l * 0.98);
         const col = edge[y * s + x] ? PAPER : l > BAYER[(y & 7) * 8 + (x & 7)] ? PAPER : INK;
         d[i] = col[0]; d[i + 1] = col[1]; d[i + 2] = col[2]; d[i + 3] = 255;
       }
@@ -49,7 +49,7 @@ const Character = (() => {
   }
 
   function frameName() {
-    if (!ANIMATED) return "base";
+    if (!ANIMATED) return state.mouth === "open" ? "talk" : "base";
     if (state.waving) return "wave";
     if (state.eyes !== "open") return "blink";
     if (state.mouth === "open") return "talk";

@@ -3,8 +3,8 @@
 
 const PROJECTS = [
   {
-    name: "Dentiqly", url: "https://dentiqly.com", domain: "dentiqly.com",
-    bg: "#0c2347", fg: "#f3f1ea", hl: "#6f9bff",
+    slug: "dentiqly", name: "Dentiqly", url: "https://dentiqly.com", domain: "dentiqly.com",
+    bg: "#cfe5ff", fg: "#0b1d3a", hl: "#1d4ed8", light: true,
     steps: [
       { d: "dentiqly-d0", m: "dentiqly-m0",
         es: "Primero, **Dentiqly**. Un SaaS para clínicas dentales que cofundé.",
@@ -21,7 +21,7 @@ const PROJECTS = [
     ],
   },
   {
-    name: "Pulso Research", url: "https://pulsoresearch.com", domain: "pulsoresearch.com",
+    slug: "pulso", name: "Pulso Research", url: "https://pulsoresearch.com", domain: "pulsoresearch.com",
     bg: "#e2ff3d", fg: "#111", hl: "#5a5f00", light: true,
     steps: [
       { d: "pulso-d0", m: "pulso-m0",
@@ -39,7 +39,7 @@ const PROJECTS = [
     ],
   },
   {
-    name: "Martín Virasoro", url: "https://martinvirasoro.com", domain: "martinvirasoro.com",
+    slug: "virasoro", name: "Martín Virasoro", url: "https://martinvirasoro.com", domain: "martinvirasoro.com",
     bg: "#24443a", fg: "#f3f1ea", hl: "#d9b26a",
     steps: [
       { d: "virasoro-d0", m: "virasoro-m0",
@@ -57,7 +57,7 @@ const PROJECTS = [
     ],
   },
   {
-    name: "Wildcat Club", url: "https://www.wildcat.club/", domain: "wildcat.club",
+    slug: "wildcat", name: "Wildcat Club", url: "https://www.wildcat.club/", domain: "wildcat.club",
     bg: "#e9dfcf", fg: "#1c2a26", hl: "#a8673b", light: true,
     steps: [
       { d: "wildcat-d0", m: "wildcat-m0",
@@ -74,13 +74,13 @@ const PROJECTS = [
 ];
 
 const WORK = [
-  { name: "Dentiqly", img: "dentiqly-d0", url: "https://dentiqly.com", es: "SaaS · Cofundador", en: "SaaS · Co-founder", big: true },
-  { name: "Pulso Research", img: "pulso-d0", url: "https://pulsoresearch.com", es: "Consultora", en: "Consultancy", big: true },
-  { name: "Martín Virasoro", img: "virasoro-d0", url: "https://martinvirasoro.com", es: "Autor y tienda", en: "Author & shop" },
-  { name: "Wildcat Club", img: "wildcat-d0", url: "https://www.wildcat.club/", es: "Real estate", en: "Real estate" },
-  { name: "Bloomsbury Living", img: "bloomsbury-d0", url: "https://bloomsburyliving.com", es: "Real estate", en: "Real estate" },
-  { name: "Catalfumo", img: "catalfumo-d0", url: "https://catalfumo.com", es: "Desarrolladora", en: "Developer" },
-  { name: "Diagnóstico de marca", fake: true, es: "React + Node · La Cocina de las Marcas", en: "React + Node · La Cocina de las Marcas", big: true },
+  { slug: "dentiqly", name: "Dentiqly", img: "dentiqly-d0", es: "SaaS · Cofundador", en: "SaaS · Co-founder", big: true },
+  { slug: "pulso", name: "Pulso Research", img: "pulso-d0", es: "Consultora", en: "Consultancy", big: true },
+  { slug: "virasoro", name: "Martín Virasoro", img: "virasoro-d0", es: "Autor y tienda", en: "Author & shop" },
+  { slug: "wildcat", name: "Wildcat Club", img: "wildcat-d0", es: "Real estate", en: "Real estate" },
+  { slug: "bloomsbury", name: "Bloomsbury Living", img: "bloomsbury-d0", es: "Real estate", en: "Real estate" },
+  { slug: "catalfumo", name: "Catalfumo", img: "catalfumo-d0", es: "Desarrolladora", en: "Developer" },
+  { slug: "diagnostico", name: "Diagnóstico de marca", fake: true, es: "React + Node · La Cocina de las Marcas", en: "React + Node · La Cocina de las Marcas", big: true },
 ];
 
 const STACK = [
@@ -119,10 +119,11 @@ const T = {
     role: "Full stack developer", status: "En búsqueda de trabajo", cta: "Contratame",
     title: "<b>Busco equipo<br>para construir</b><br><i>cosas que andan.</i>",
     about: "Soy un desarrollador full stack en Buenos Aires y busco *sumarme a un equipo de producto*, part time o full time. Desde 2023 hice webs, tiendas y sistemas para clientes, y cofundé un SaaS. Me gusta trabajar de la base de datos a la interfaz, aprender rápido y que lo que hago se vea tan bien como funciona.",
-    "stack.title": "Mi stack", "stack.count": "Lo que uso todos los días",
+    "stack.title": "Mi stack", "stack.count": "",
     "langs.title": "Idiomas", "langs.count": "4 idiomas",
-    "exp.title": "Experiencia", "exp.count": "Lo más nuevo arriba",
+    "exp.title": "Experiencia", "exp.count": "",
     "work.title": "Todo el trabajo", view: "Ver proyecto",
+    d: { back: "Volver", role: "Rol", type: "Tipo", stack: "Stack", site: "Ver el sitio", did: "Qué hice", next: "Siguiente proyecto", shots: "Capturas" },
     "contact.title": "¿Buscás un dev?", "contact.sub": "Disponibilidad inmediata para sumarme a tu equipo, part time o full time, remoto o híbrido.",
     copied: "¡Copiado!", projects: "proyectos", available: "Disponible para trabajar",
     say: {
@@ -133,17 +134,17 @@ const T = {
       work: "Todo esto lo hice yo. Imaginate en **tu equipo**.",
       contact: "Si llegaste hasta acá, **hablemos**.",
       copy: "Mandame un mail y te contesto en el día. **Click** y se copia.",
-      grab: ["¡Epa! **Bajame** despacio.", "Wiii, ¡estoy **volando**!", "¡Ey! Que me **despeinás**."],
     },
   },
   en: {
     role: "Full stack developer", status: "Open to work", cta: "Hire me",
     title: "<b>Looking for<br>a team to build</b><br><i>things that work.</i>",
     about: "I'm a full stack developer in Buenos Aires looking to *join a product team*, part time or full time. Since 2023 I've built websites, shops and systems for clients, and co-founded a SaaS. I like working from the database to the interface, learning fast, and making things look as good as they work.",
-    "stack.title": "My stack", "stack.count": "What I use every day",
+    "stack.title": "My stack", "stack.count": "",
     "langs.title": "Languages", "langs.count": "4 languages",
-    "exp.title": "Experience", "exp.count": "Newest first",
+    "exp.title": "Experience", "exp.count": "",
     "work.title": "All work", view: "View project",
+    d: { back: "Back", role: "Role", type: "Type", stack: "Stack", site: "Visit the site", did: "What I did", next: "Next project", shots: "Screens" },
     "contact.title": "Need a dev?", "contact.sub": "Available right away to join your team, part time or full time, remote or hybrid.",
     copied: "Copied!", projects: "projects", available: "Open to work",
     say: {
@@ -154,7 +155,6 @@ const T = {
       work: "I built all of this. Picture me on **your team**.",
       contact: "Made it this far? Let's **talk**.",
       copy: "Email me and I'll reply the same day. **Click** to copy.",
-      grab: ["Hey! Put me **down** gently.", "Wheee, I'm **flying**!", "Hey! You're messing up my **hair**."],
     },
   },
 };
@@ -208,7 +208,7 @@ function render() {
       <div class="proj__sticky">
         <div class="proj__head">
           <h2 class="proj__title">${p.name}</h2>
-          <a class="pill" href="${p.url}" target="_blank" rel="noopener">${t("view")} <span aria-hidden="true">→</span></a>
+          <a class="pill" href="#${p.slug}">${t("view")} <span aria-hidden="true">→</span></a>
         </div>
         <div class="proj__stage">
           <div class="mock-browser">
@@ -224,15 +224,15 @@ function render() {
   $("#stackList").innerHTML = STACK.map((g, gi) => `
     <div class="stack__row">
       <h3>${g[lang]}</h3>
-      <div class="stack__items">${g.items.map(([name, key, nameEn]) => `<button class="tech" data-g="${gi}">${icon(key)}<span>${lang === "en" && nameEn ? nameEn : name}</span></button>`).join("")}</div>
+      <div class="stack__items">${g.items.map(([name, key, nameEn]) => `<span class="tech" title="${lang === "en" && nameEn ? nameEn : name}" role="img" aria-label="${lang === "en" && nameEn ? nameEn : name}">${icon(key)}</span>`).join("")}</div>
     </div>`).join("");
 
   $("#langList").innerHTML = LANGS.map((l, i) => `
     <button class="lang" data-i="${i}">
-      ${FLAGS[l.flag]}
-      <p class="lang__name">${l[lang]}</p>
-      <p class="lang__lvl">${lang === "es" ? l.lvlEs : l.lvlEn}</p>
-      <div class="meter">${[1, 2, 3, 4, 5].map((n) => `<i class="${n <= l.lvl ? "on" : ""}"></i>`).join("")}</div>
+      <span class="lang__flag">${FLAGS[l.flag]}</span>
+      <span class="lang__name">${l[lang]}</span>
+      <span class="lang__hello" aria-hidden="true">${l.hello.replace(/\*\*/g, "")}</span>
+      <span class="lang__lvl">${lang === "es" ? l.lvlEs : l.lvlEn}<span class="meter">${[1, 2, 3, 4, 5].map((n) => `<i class="${n <= l.lvl ? "on" : ""}"></i>`).join("")}</span></span>
     </button>`).join("");
 
   $("#expList").innerHTML = EXP.map((e) => `
@@ -244,7 +244,7 @@ function render() {
 
   $("#workCount").textContent = `${WORK.length} ${t("projects")}`;
   $("#workGrid").innerHTML = WORK.map((w) => `
-    <a class="card${w.big ? " big" : ""}" ${w.url ? `href="${w.url}" target="_blank" rel="noopener"` : ""}>
+    <a class="card${w.big ? " big" : ""}" href="#${w.slug}">
       <div class="card__img">${w.fake
         ? `<div class="card__fake"><img class="card__logo" src="${IMG_BASE}lacocina-logo.png" alt="La Cocina de las Marcas" onerror="this.replaceWith(Object.assign(document.createElement('b'), { textContent: 'La Cocina de las Marcas' }))"></div>`
         : `<img src="${img(w.img)}" alt="${w.name}" loading="lazy">`}</div>
@@ -254,6 +254,7 @@ function render() {
   scenes = [...document.querySelectorAll("[data-scene]")];
   current = null;
   onScroll();
+  route();
 }
 const uniq = (a) => [...new Set(a)];
 
@@ -274,7 +275,7 @@ function say(text) {
   bubble.classList.add("show");
   const spans = bubbleText.querySelectorAll(".g");
   let i = 0;
-  mouthTimer = setInterval(() => Character.set({ mouth: Character.state.mouth === "open" ? "smile" : "open" }), 110);
+  mouthTimer = setInterval(() => Character.set({ mouth: Character.state.mouth === "open" ? "smile" : "open" }), 130);
   typing = setInterval(() => {
     for (let k = 0; k < 2 && i < spans.length; k++, i++) spans[i].classList.remove("g");
     if (i >= spans.length) { clearInterval(typing); clearInterval(mouthTimer); Character.set({ mouth: "smile" }); }
@@ -334,8 +335,6 @@ canvas.addEventListener("pointerdown", (e) => {
   hold = { x: e.clientX, y: e.clientY };
   buddy.classList.add("held");
   canvas.style.transition = "none";
-  Character.set({ waving: true });
-  const g = t("say").grab; say(g[Math.floor(Math.random() * g.length)]);
 });
 canvas.addEventListener("pointermove", (e) => {
   if (!hold) return;
@@ -347,7 +346,6 @@ const drop = () => {
   hold = null; buddy.classList.remove("held");
   canvas.style.transition = "transform .6s cubic-bezier(.3, 1.6, .5, 1)";
   canvas.style.transform = "";
-  Character.set({ waving: false });
 };
 canvas.addEventListener("pointerup", drop);
 canvas.addEventListener("pointercancel", drop);
@@ -378,6 +376,81 @@ document.querySelector(".langswitch").addEventListener("click", (e) => {
   try { localStorage.setItem("lang", lang); } catch (e) {}
   render();
 });
+
+// ---------- página de cada proyecto ----------
+const detail = $("#detail");
+const SLUGS = WORK.map((w) => w.slug);
+let returnY = 0;
+
+function route() {
+  const slug = location.hash.slice(1);
+  const d = DETAILS[slug];
+  if (!d) {
+    if (!detail.hidden) {
+      detail.hidden = true; document.body.classList.remove("in-detail");
+      scrollTo(0, returnY);
+    }
+    return;
+  }
+  if (detail.hidden) returnY = scrollY;
+  const c = d[lang], L = t("d");
+  const next = SLUGS[(SLUGS.indexOf(slug) + 1) % SLUGS.length];
+  const meta = [[L.role, c.role], [L.type, c.kind], [L.stack, d.stack.join(", ")]];
+  detail.style.cssText = `--bg:${d.bg};--fg:${d.fg};--hl:${d.hl}`;
+  detail.innerHTML = `
+    <header class="detail__head">
+      <div class="detail__bar">
+        <a class="pill" href="#trabajo"><span aria-hidden="true">←</span> ${L.back}</a>
+        ${d.url ? `<a class="pill" href="${d.url}" target="_blank" rel="noopener">${L.site} <span aria-hidden="true">↗</span></a>` : ""}
+      </div>
+      <p class="detail__kind">${c.kind}${c.year ? ` · ${c.year}` : ""}</p>
+      <h1 class="detail__title">${d.name}</h1>
+      <p class="detail__lead">${c.lead}</p>
+    </header>
+    <div class="detail__body">
+      <dl class="detail__meta">${meta.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}</dl>
+      <div class="detail__text">
+        ${c.body.map((p) => `<p>${p}</p>`).join("")}
+        <h2>${L.did}</h2>
+        <ul>${c.did.map((x) => `<li>${x}</li>`).join("")}</ul>
+      </div>
+      ${d.shots.length || d.phones.length ? `
+      <h2 class="detail__h">${L.shots}</h2>
+      <div class="detail__shots">
+        ${d.shots.map((s) => `<figure class="mock-browser mock-browser--static"><div class="mock-browser__bar"><i></i><i></i><i></i><span class="mock-browser__url">${d.domain}</span></div><img src="${img(s)}" alt="${d.name}" loading="lazy"></figure>`).join("")}
+      </div>
+      ${d.phones.length ? `<div class="detail__phones">${d.phones.map((m) => `<figure class="mock-phone mock-phone--static"><div class="mock-phone__screen"><img src="${img(m)}" alt="${d.name}, versión celular" loading="lazy"></div></figure>`).join("")}</div>` : ""}` : `
+      <div class="detail__logo">${$(".card__fake") ? $(".card__fake").innerHTML : `<b>${d.name}</b>`}</div>`}
+      <a class="detail__next" href="#${next}"><span>${L.next}</span>${DETAILS[next].name} <span aria-hidden="true">→</span></a>
+    </div>`;
+  detail.hidden = false;
+  document.body.classList.add("in-detail");
+  detail.scrollTop = 0;
+}
+addEventListener("hashchange", route);
+addEventListener("keydown", (e) => { if (e.key === "Escape" && !detail.hidden) location.hash = "trabajo"; });
+
+// ---------- logos que aparecen al pasar el mouse por el hero ----------
+const TRAIL = ["react", "typescript", "javascript", "nodedotjs", "python", "postgresql", "figma", "wordpress", "php", "mysql", "git", "html5", "css3", "express", "fastapi", "framer"];
+const hero = $(".hero");
+let lastDrop = null, trailIdx = 0;
+if (matchMedia("(pointer: fine)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  hero.addEventListener("pointermove", (e) => {
+    if (e.target.closest(".buddy, .pill, .langswitch, .status")) return;
+    const r = hero.getBoundingClientRect();
+    const x = e.clientX - r.left, y = e.clientY - r.top;
+    if (lastDrop && Math.hypot(x - lastDrop.x, y - lastDrop.y) < 90) return;
+    lastDrop = { x, y };
+    const el = document.createElement("span");
+    el.className = "trail";
+    el.innerHTML = icon(TRAIL[trailIdx++ % TRAIL.length]);
+    el.style.left = `${x}px`; el.style.top = `${y}px`;
+    el.style.setProperty("--r", `${(Math.random() - 0.5) * 30}deg`);
+    hero.appendChild(el);
+    el.addEventListener("animationend", () => el.remove());
+  });
+  hero.addEventListener("pointerleave", () => (lastDrop = null));
+}
 
 $("#year").textContent = new Date().getFullYear();
 render();
