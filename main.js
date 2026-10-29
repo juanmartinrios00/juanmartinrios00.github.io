@@ -369,7 +369,7 @@ function toast(msg) {
   clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove("show"), 1600);
 }
 
-document.querySelectorAll("[data-lang]").forEach((b) => (b.innerHTML = FLAGS[b.dataset.lang === "es" ? "ar" : "us"]));
+document.querySelectorAll("[data-lang]").forEach((b) => (b.innerHTML = FLAGS[b.dataset.lang === "es" ? "es" : "us"]));
 document.querySelector(".langswitch").addEventListener("click", (e) => {
   const b = e.target.closest("[data-lang]");
   if (!b || b.dataset.lang === lang) return;
