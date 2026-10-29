@@ -97,7 +97,7 @@ const STACK = [
 ];
 
 const LANGS = [
-  { flag: "ar", es: "Español", en: "Spanish", lvl: 5, lvlEs: "Nativo", lvlEn: "Native", hello: "¡Hola! ¿Tomamos unos mates?" },
+  { flag: "es", es: "Español", en: "Spanish", lvl: 5, lvlEs: "Nativo", lvlEn: "Native", hello: "¡Hola! ¿Tomamos unos mates?" },
   { flag: "us", es: "Inglés", en: "English", lvl: 4, lvlEs: "Avanzado · C1 Cambridge", lvlEn: "Advanced · C1 Cambridge", hello: "Hi! Let's build **something cool**." },
   { flag: "br", es: "Portugués", en: "Portuguese", lvl: 3, lvlEs: "Intermedio", lvlEn: "Intermediate", hello: "Oi! **Tudo bem**?" },
   { flag: "it", es: "Italiano", en: "Italian", lvl: 3, lvlEs: "Intermedio", lvlEn: "Intermediate", hello: "Ciao! **Come va**?" },
@@ -176,6 +176,7 @@ function icon(key) {
 }
 
 const FLAGS = {
+  es: '<svg viewBox="0 0 750 500"><rect width="750" height="500" fill="#AA151B"/><rect y="125" width="750" height="250" fill="#F1BF00"/></svg>',
   ar: '<svg viewBox="0 0 9 6"><rect width="9" height="6" fill="#74ACDF"/><rect y="2" width="9" height="2" fill="#fff"/><circle cx="4.5" cy="3" r=".7" fill="#F6B40E"/></svg>',
   us: '<svg viewBox="0 0 19 10"><rect width="19" height="10" fill="#B22234"/><g fill="#fff"><rect y="0.77" width="19" height="0.77"/><rect y="2.31" width="19" height="0.77"/><rect y="3.85" width="19" height="0.77"/><rect y="5.38" width="19" height="0.77"/><rect y="6.92" width="19" height="0.77"/><rect y="8.46" width="19" height="0.77"/></g><rect width="7.6" height="5.38" fill="#3C3B6E"/></svg>',
   br: '<svg viewBox="0 0 10 7"><rect width="10" height="7" fill="#009C3B"/><path d="M5 .8 9.2 3.5 5 6.2.8 3.5Z" fill="#FFDF00"/><circle cx="5" cy="3.5" r="1.5" fill="#002776"/></svg>',
