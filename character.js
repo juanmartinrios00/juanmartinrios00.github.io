@@ -1,11 +1,10 @@
 // Personaje: cuatro fotogramas de la ilustración de Juan (base, parpadeo, saludo, hablando).
-// Se pinta en un canvas para poder cambiarle el estilo con "Vestime":
-// color original, pixel (dither blanco y negro) o duotono.
+// Se pinta en un canvas y se pasa por un dither 8x8 en blanco y negro (estilo "pixel").
+// Con style: "color" se ve la ilustración original.
 const Character = (() => {
   const FRAMES = { base: "juan-base", blink: "juan-blink", wave: "juan-wave", talk: "juan-talk" };
-  const STYLES = ["color", "pixel", "duo"];
-  const SIZE = { color: 640, pixel: 240, duo: 320 };
-  const INK = [17, 17, 17], PAPER = [243, 241, 234], NAVY = [20, 32, 92];
+  const SIZE = { color: 640, pixel: 260 };
+  const INK = [17, 17, 17], PAPER = [243, 241, 234];
 
   const BAYER = [
     0, 32, 8, 40, 2, 34, 10, 42, 48, 16, 56, 24, 50, 18, 58, 26,
@@ -15,7 +14,7 @@ const Character = (() => {
   ].map((v) => (v + 0.5) / 64);
 
   const imgs = {}, cache = {};
-  const state = { eyes: "open", mouth: "smile", waving: false, style: "color" };
+  const state = { eyes: "open", mouth: "smile", waving: false, style: "pixel" };
   let out, o, ready = false;
 
   // procesa un fotograma en el estilo pedido y lo guarda
@@ -26,19 +25,20 @@ const Character = (() => {
     c.width = c.height = s;
     const g = c.getContext("2d", { willReadFrequently: true });
     g.drawImage(imgs[frame], 0, 0, s, s);
-    if (style !== "color") {
+    if (style === "pixel") {
       const id = g.getImageData(0, 0, s, s), d = id.data;
+      const solid = (x, y) => x >= 0 && y >= 0 && x < s && y < s && d[(y * s + x) * 4 + 3] >= 110;
+      const edge = new Uint8Array(s * s);
+      for (let y = 0; y < s; y++) for (let x = 0; x < s; x++) {
+        if (solid(x, y) && (!solid(x - 1, y) || !solid(x + 1, y) || !solid(x, y - 1) || !solid(x, y + 1))) edge[y * s + x] = 1;
+      }
       for (let y = 0; y < s; y++) for (let x = 0; x < s; x++) {
         const i = (y * s + x) * 4;
         if (d[i + 3] < 110) { d[i + 3] = 0; continue; }
         let l = (d[i] * 0.3 + d[i + 1] * 0.59 + d[i + 2] * 0.11) / 255;
-        let col;
-        if (style === "pixel") {
-          l = Math.min(1, Math.max(0, (l - 0.12) * 1.35)); // más contraste para que la remera no quede plana
-          col = l > BAYER[(y & 7) * 8 + (x & 7)] ? PAPER : INK;
-        } else {
-          col = NAVY.map((v, k) => v + (PAPER[k] - v) * Math.min(1, l * 1.25));
-        }
+        // levanta los negros para que la remera se lea sobre fondos oscuros
+        l = Math.min(1, 0.2 + Math.max(0, l - 0.08) * 1.3);
+        const col = edge[y * s + x] ? PAPER : l > BAYER[(y & 7) * 8 + (x & 7)] ? PAPER : INK;
         d[i] = col[0]; d[i + 1] = col[1]; d[i + 2] = col[2]; d[i + 3] = 255;
       }
       g.putImageData(id, 0, 0);
@@ -99,11 +99,6 @@ const Character = (() => {
   }
 
   function set(patch) { Object.assign(state, patch); render(); }
-  function nextStyle() {
-    state.style = STYLES[(STYLES.indexOf(state.style) + 1) % STYLES.length];
-    render();
-    return state.style;
-  }
 
-  return { mount, set, wave, nextStyle, state };
+  return { mount, set, wave, state };
 })();

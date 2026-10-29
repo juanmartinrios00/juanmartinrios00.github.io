@@ -98,67 +98,63 @@ const STACK = [
 
 const LANGS = [
   { flag: "ar", es: "Español", en: "Spanish", lvl: 5, lvlEs: "Nativo", lvlEn: "Native", hello: "¡Hola! ¿Tomamos unos mates?" },
-  { flag: "us", es: "Inglés", en: "English", lvl: 4, lvlEs: "Avanzado", lvlEn: "Advanced", hello: "Hi! Let's build **something cool**." },
+  { flag: "us", es: "Inglés", en: "English", lvl: 4, lvlEs: "Avanzado · C1 Cambridge", lvlEn: "Advanced · C1 Cambridge", hello: "Hi! Let's build **something cool**." },
   { flag: "br", es: "Portugués", en: "Portuguese", lvl: 3, lvlEs: "Intermedio", lvlEn: "Intermediate", hello: "Oi! **Tudo bem**?" },
   { flag: "it", es: "Italiano", en: "Italian", lvl: 3, lvlEs: "Intermedio", lvlEn: "Intermediate", hello: "Ciao! **Come va**?" },
 ];
 
 const EXP = [
-  { year: "2026", where: "Dentiqly", es: ["Cofundador y developer", "Modelo de datos, APIs REST en TypeScript e interfaces de un SaaS para clínicas dentales."],
-    en: ["Co-founder & developer", "Data model, TypeScript REST APIs and interfaces for a SaaS for dental clinics."] },
-  { year: "2025", where: "La Cocina de las Marcas", es: ["Full stack developer", "App de diagnóstico de marca en React y Node: cuestionario, scoring y gráficos. Más mantenimiento web y desarrollos a medida."],
-    en: ["Full stack developer", "Brand diagnostic app in React and Node: questionnaire, scoring and charts. Plus web maintenance and custom builds."] },
-  { year: "2024", where: { es: "Formación", en: "Training" }, es: ["Programación", "TypeScript, React, C++ y SQL, sin dejar de entregar proyectos."],
-    en: ["Programming", "TypeScript, React, C++ and SQL, while still shipping client work."] },
-  { year: "2022 →", where: "Freelance", es: ["Desarrollador web", "E-commerce, sistemas de gestión y sitios a medida con WordPress, Framer, JavaScript, PHP y MySQL."],
-    en: ["Web developer", "E-commerce, management systems and custom sites with WordPress, Framer, JavaScript, PHP and MySQL."] },
+  { year: "2026 →", where: "Dentiqly", es: ["Cofundador y full stack developer", "SaaS para consultorios odontológicos. Diseñé el esquema en PostgreSQL, las APIs REST en Node, Express y TypeScript (auth, validación, roles) y las interfaces en React."],
+    en: ["Co-founder & full stack developer", "SaaS for dental practices. I designed the PostgreSQL schema, the REST APIs in Node, Express and TypeScript (auth, validation, roles) and the React interfaces."] },
+  { year: "2025 – 2026", where: "La Cocina de las Marcas", es: ["Full stack developer", "En un equipo de dos devs, hice una app de diagnóstico de marca: cuestionario multi-paso, scoring en Node y un gráfico diamante con métricas de Branding y Naming. Pasó de herramienta interna a producto para clientes."],
+    en: ["Full stack developer", "In a two-dev team, I built a brand diagnostic app: multi-step questionnaire, scoring in Node and a diamond chart with Branding and Naming metrics. It grew from an internal tool into a product for clients."] },
+  { year: "2024 →", where: { es: "UTN", en: "UTN" }, es: ["Tecnicatura Universitaria en Programación", "Universidad Tecnológica Nacional, en curso."],
+    en: ["Associate degree in Programming", "Universidad Tecnológica Nacional, in progress."] },
+  { year: "2023 →", where: "Freelance", es: ["Web developer", "E-commerce, sistemas de gestión y sitios a medida con WordPress, WooCommerce, Framer, PHP y MySQL. Integraciones con APIs y automatizaciones para clientes."],
+    en: ["Web developer", "E-commerce, management systems and custom sites with WordPress, WooCommerce, Framer, PHP and MySQL. API integrations and automations for clients."] },
 ];
 
 const T = {
   es: {
-    role: "Full stack developer", cta: "Hablemos",
-    title: "<b>Hago webs<br>que funcionan</b><br><i>de punta a punta.</i>",
-    about: "Soy full stack developer en Buenos Aires. Desde 2022 hago webs, tiendas y sistemas para clientes, y hoy estoy construyendo mi propio SaaS. Me gusta trabajar *de la base de datos a la interfaz*, y que lo que hago se vea tan bien como funciona.",
+    role: "Full stack developer · Buscando laburo", cta: "Contratame",
+    title: "<b>Busco equipo<br>para construir</b><br><i>cosas que andan.</i>",
+    about: "Soy full stack developer en Buenos Aires y busco *sumarme a un equipo de producto*, part time o full time. Desde 2023 hice webs, tiendas y sistemas para clientes, y cofundé un SaaS. Me gusta trabajar de la base de datos a la interfaz, aprender rápido y que lo que hago se vea tan bien como funciona.",
     "stack.title": "Mi stack", "stack.count": "Lo que uso todos los días",
     "langs.title": "Idiomas", "langs.count": "4 idiomas",
     "exp.title": "Experiencia", "exp.count": "Lo más nuevo arriba",
     "work.title": "Todo el trabajo", view: "Ver proyecto",
-    "contact.title": "¿Tenés un proyecto?", "contact.sub": "Estoy buscando laburo, part time o full time.",
-    dress: "Vestime", trick: "Hacé un truco", copied: "¡Copiado!", projects: "proyectos",
+    "contact.title": "¿Buscás un dev?", "contact.sub": "Disponibilidad inmediata para sumarme a tu equipo, part time o full time, remoto o híbrido.",
+    copied: "¡Copiado!", projects: "proyectos", available: "Disponible para trabajar",
     say: {
-      hero: "Hola, soy **Juan**. Scrolleá y te muestro todo.",
+      hero: "Hola, soy **Juan** y estoy buscando laburo. Bajá que te muestro qué sé hacer.",
       stack: "Sí, también hago **backend**. Pasá el mouse por los logos.",
       langs: "Hablo **4 idiomas**. Tocá uno y te saludo.",
-      exp: "Desde 2022 sin parar. Lo más nuevo, **arriba**.",
-      work: "Acá está **todo** lo que hice.",
-      contact: "Psst. Podés **agarrarme**.",
-      copy: "Escribime cuando quieras. **Hacé click** y se copia.",
+      exp: "Laburando y estudiando en la **UTN** al mismo tiempo.",
+      work: "Todo esto lo hice yo. Imaginate en **tu equipo**.",
+      contact: "Si llegaste hasta acá, **contratame** jaja.",
+      copy: "Mandame un mail y te contesto en el día. **Click** y se copia.",
       grab: ["¡Epa! **Bajame** despacio.", "Wiii, ¡estoy **volando**!", "¡Ey! Que me **despeinás**."],
-      trick: "¡**Tadá**!",
-      styles: { color: "Volví a mis **colores**.", pixel: "Modo **pixel**. ¿Te suena de algún lado?", duo: "Modo **lofi**. Ponete unos auriculares." },
     },
   },
   en: {
-    role: "Full stack developer", cta: "Get in touch",
-    title: "<b>I build websites<br>that work</b><br><i>end to end.</i>",
-    about: "I'm a full stack developer in Buenos Aires. Since 2022 I've built websites, shops and systems for clients, and now I'm building my own SaaS. I like working *from the database to the interface*, and making things look as good as they work.",
+    role: "Full stack developer · Open to work", cta: "Hire me",
+    title: "<b>Looking for<br>a team to build</b><br><i>things that work.</i>",
+    about: "I'm a full stack developer in Buenos Aires looking to *join a product team*, part time or full time. Since 2023 I've built websites, shops and systems for clients, and co-founded a SaaS. I like working from the database to the interface, learning fast, and making things look as good as they work.",
     "stack.title": "My stack", "stack.count": "What I use every day",
     "langs.title": "Languages", "langs.count": "4 languages",
     "exp.title": "Experience", "exp.count": "Newest first",
     "work.title": "All work", view: "View project",
-    "contact.title": "Got a project?", "contact.sub": "I'm looking for work, part time or full time.",
-    dress: "Dress me up", trick: "Do a trick", copied: "Copied!", projects: "projects",
+    "contact.title": "Need a dev?", "contact.sub": "Available right away to join your team, part time or full time, remote or hybrid.",
+    copied: "Copied!", projects: "projects", available: "Open to work",
     say: {
-      hero: "Hi, I'm **Juan**. Scroll down and I'll show you around.",
+      hero: "Hi, I'm **Juan** and I'm looking for work. Scroll down to see what I can do.",
       stack: "Yes, I do **backend** too. Hover the logos.",
       langs: "I speak **4 languages**. Tap one and I'll say hi.",
-      exp: "Non-stop since 2022. Newest **on top**.",
-      work: "Here's **everything** I've made.",
-      contact: "Psst. You can **grab** me.",
-      copy: "Write me anytime. **Click** and it's copied.",
+      exp: "Working and studying at **UTN** at the same time.",
+      work: "I built all of this. Picture me on **your team**.",
+      contact: "Made it this far? Go on, **hire me**.",
+      copy: "Email me and I'll reply the same day. **Click** to copy.",
       grab: ["Hey! Put me **down** gently.", "Wheee, I'm **flying**!", "Hey! You're messing up my **hair**."],
-      trick: "**Ta-da**!",
-      styles: { color: "Back to my **colours**.", pixel: "**Pixel** mode. Looks familiar?", duo: "**Lofi** mode. Grab your headphones." },
     },
   },
 };
@@ -198,7 +194,7 @@ const $ = (s) => document.querySelector(s);
 // ---------- render ----------
 function render() {
   document.documentElement.lang = lang;
-  $("#lang").textContent = lang === "es" ? "EN" : "ES";
+  document.querySelectorAll("[data-lang]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.lang === lang));
   document.querySelectorAll("[data-i18n]").forEach((el) => (el.textContent = t(el.dataset.i18n)));
   document.querySelectorAll("[data-i18n-html]").forEach((el) => (el.innerHTML = t(el.dataset.i18nHtml)));
 
@@ -250,7 +246,7 @@ function render() {
   $("#workGrid").innerHTML = WORK.map((w) => `
     <a class="card${w.big ? " big" : ""}" ${w.url ? `href="${w.url}" target="_blank" rel="noopener"` : ""}>
       <div class="card__img">${w.fake
-        ? `<div class="card__fake"><span>La Cocina de las Marcas</span><b>87/100</b><span>${lang === "es" ? "Tu marca, en un puntaje" : "Your brand, in one score"}</span></div>`
+        ? `<div class="card__fake"><img class="card__logo" src="${IMG_BASE}lacocina-logo.png" alt="La Cocina de las Marcas" onerror="this.replaceWith(Object.assign(document.createElement('b'), { textContent: 'La Cocina de las Marcas' }))"></div>`
         : `<img src="${img(w.img)}" alt="${w.name}" loading="lazy">`}</div>
       <div class="card__meta"><span>${w.name}</span><span>${w[lang]}</span></div>
     </a>`).join("");
@@ -281,7 +277,6 @@ function say(text) {
   mouthTimer = setInterval(() => Character.set({ mouth: Character.state.mouth === "open" ? "smile" : "open" }), 110);
   typing = setInterval(() => {
     for (let k = 0; k < 2 && i < spans.length; k++, i++) spans[i].classList.remove("g");
-    if (i % 4 === 0) blip();
     if (i >= spans.length) { clearInterval(typing); clearInterval(mouthTimer); Character.set({ mouth: "smile" }); }
   }, 32);
 }
@@ -357,17 +352,6 @@ const drop = () => {
 canvas.addEventListener("pointerup", drop);
 canvas.addEventListener("pointercancel", drop);
 
-// ---------- vestir y truco ----------
-$("#dress").addEventListener("click", () => {
-  const style = Character.nextStyle();
-  say(t("say").styles[style]);
-});
-$("#trick").addEventListener("click", () => {
-  buddy.classList.remove("trick"); void buddy.offsetWidth; buddy.classList.add("trick");
-  Character.wave(1000);
-  say(t("say").trick);
-});
-
 // ---------- interacciones de las secciones ----------
 document.addEventListener("pointerover", (e) => {
   const tech = e.target.closest(".tech");
@@ -395,26 +379,14 @@ function toast(msg) {
   clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove("show"), 1600);
 }
 
-$("#lang").addEventListener("click", () => {
-  lang = lang === "es" ? "en" : "es";
+document.querySelectorAll("[data-lang]").forEach((b) => (b.innerHTML = FLAGS[b.dataset.lang === "es" ? "ar" : "us"]));
+document.querySelector(".langswitch").addEventListener("click", (e) => {
+  const b = e.target.closest("[data-lang]");
+  if (!b || b.dataset.lang === lang) return;
+  lang = b.dataset.lang;
   try { localStorage.setItem("lang", lang); } catch (e) {}
   render();
 });
-
-// ---------- sonido ----------
-let audio = null, soundOn = false;
-$("#sound").addEventListener("click", (e) => {
-  soundOn = !soundOn; e.currentTarget.setAttribute("aria-pressed", soundOn);
-  if (soundOn && !audio) audio = new (window.AudioContext || window.webkitAudioContext)();
-  blip();
-});
-function blip() {
-  if (!soundOn || !audio) return;
-  const o = audio.createOscillator(), g = audio.createGain();
-  o.type = "square"; o.frequency.value = 520 + Math.random() * 180;
-  g.gain.setValueAtTime(0.03, audio.currentTime); g.gain.exponentialRampToValueAtTime(0.0001, audio.currentTime + 0.06);
-  o.connect(g).connect(audio.destination); o.start(); o.stop(audio.currentTime + 0.07);
-}
 
 $("#year").textContent = new Date().getFullYear();
 render();

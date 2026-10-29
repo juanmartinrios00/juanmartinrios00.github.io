@@ -6,7 +6,8 @@ Portfolio de Juan Martín Rios. HTML, CSS y JS a mano, sin build: GitHub Pages l
 - `main.js`: todo el contenido en ES/EN (proyectos y sus globos, stack, idiomas, experiencia) y las interacciones.
 - `character.js`: el personaje. Usa los cuatro fotogramas `img/juan-*.webp` (base, parpadeo, saludo, hablando) y con "Vestime" cambia entre color, pixel y duotono.
 - `icons.js`: logos de [Simple Icons](https://simpleicons.org) (CC0).
-- `img/`: capturas de los proyectos.
+- `img/`: capturas de los proyectos y el personaje. Para el logo de La Cocina de las Marcas, poné `img/lacocina-logo.png`.
+- `assets/`: el CV en PDF.
 
 ## Para verlo en local
 

@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Juan Martín Rios · Full stack developer</title>
-  <meta name="description" content="Juan Martín Rios, full stack developer en Buenos Aires. Hago webs y apps de la base de datos a la interfaz.">
-  <meta name="theme-color" content="#2f56f0">
+  <meta name="description" content="Juan Martín Rios, full stack developer en Buenos Aires. Full stack developer buscando sumarse a un equipo de producto.">
+  <meta name="theme-color" content="#0e0e0e">
   <meta property="og:title" content="Juan Martín Rios · Full stack developer">
-  <meta property="og:description" content="Hago webs y apps de la base de datos a la interfaz.">
+  <meta property="og:description" content="Full stack developer buscando sumarse a un equipo de producto.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,300..800&display=swap" rel="stylesheet">
@@ -20,17 +20,17 @@
     <div class="bubble" id="bubble" aria-live="polite"><span id="bubbleText"></span></div>
     <div class="buddy__frame"><canvas class="buddy__canvas" id="buddyCanvas" role="img" aria-label="Juan en versión anime, saludando"></canvas></div>
   </div>
-  <button class="sound" id="sound" aria-label="Activar sonido" aria-pressed="false">
-    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path class="sound__waves" d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/><path class="sound__off" d="m22 9-6 6M16 9l6 6"/></svg>
-  </button>
 
   <!-- HERO -->
   <header class="hero" data-scene="hero">
     <div class="hero__top">
       <p class="hero__name"><strong>Juan Martín Rios</strong><span data-i18n="role">Full stack developer</span></p>
       <div class="hero__actions">
-        <button class="pill" id="lang" aria-label="Cambiar idioma">EN</button>
-        <a href="#contacto" class="pill"><span data-i18n="cta">Hablemos</span> <span aria-hidden="true">↓</span></a>
+        <div class="langswitch" role="group" aria-label="Idioma / Language">
+          <button data-lang="es" aria-label="Español"></button>
+          <button data-lang="en" aria-label="English"></button>
+        </div>
+        <a href="#contacto" class="pill"><span data-i18n="cta">Contratame</span> <span aria-hidden="true">↓</span></a>
       </div>
     </div>
     <h1 class="hero__title" data-i18n-html="title"></h1>
@@ -93,12 +93,11 @@
       <div class="contact__links">
         <a href="https://linkedin.com/in/juan-martin-rios" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
         <a href="https://github.com/juanmartinrios00" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
-        <a href="https://juanmartinrios.netlify.app/assets/Juan%20Martin%20Rios%20-%20CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
+        <a href="assets/Juan%20Martin%20Rios%20-%20CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
       </div>
       <div class="contact__small">
         <span>© <span id="year"></span> Juan Martín Rios</span>
-        <button id="dress" data-i18n="dress">Vestime</button>
-        <button id="trick" data-i18n="trick">Hacé un truco</button>
+        <span data-i18n="available">Disponible para trabajar</span>
       </div>
     </div>
   </footer>
