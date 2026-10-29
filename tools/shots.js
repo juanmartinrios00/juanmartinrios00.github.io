@@ -23,6 +23,17 @@ async function settle(page) {
     window.scrollTo(0, 0);
   });
   await page.waitForTimeout(1500);
+  await hideCookies(page);
+}
+
+// saca cualquier cartel fijo que hable de cookies
+async function hideCookies(page) {
+  await page.evaluate(() => {
+    document.querySelectorAll("body *").forEach((el) => {
+      const cs = getComputedStyle(el);
+      if ((cs.position === "fixed" || cs.position === "sticky") && /cookie/i.test(el.textContent) && el.textContent.length < 800) el.remove();
+    });
+  });
 }
 
 (async () => {
@@ -38,6 +49,7 @@ async function settle(page) {
       for (let i = 0, y = 0; y < h && i < max; i++, y += step) {
         await desk.evaluate((y) => window.scrollTo(0, y), y);
         await desk.waitForTimeout(900);
+        await hideCookies(desk);
         await desk.screenshot({ path: `shots/raw/${name}-d${i}.jpg`, type: "jpeg", quality: 80 });
       }
       await desk.close();
@@ -48,6 +60,7 @@ async function settle(page) {
       for (let i = 0; i < 3; i++) {
         await mob.evaluate((y) => window.scrollTo(0, y), i * 844);
         await mob.waitForTimeout(900);
+        await hideCookies(mob);
         await mob.screenshot({ path: `shots/raw/${name}-m${i}.jpg`, type: "jpeg", quality: 80 });
       }
       await ctx.close();
