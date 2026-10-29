@@ -149,7 +149,7 @@ function render() {
                 : `<span class="note note--inline">${t("feat.private")}</span>`}
       </div>
       <a class="project__media" ${p.url ? `href="${p.url}" target="_blank" rel="noopener"` : ""}>
-        ${p.thumb ? `<img src="${ASSETS + p.thumb}" alt="${p.name}" loading="lazy">` : placeholder(p)}
+        ${p.thumb ? `<img src="${ASSETS + p.thumb}" alt="${p.name}" loading="lazy" onerror="this.remove()">` : placeholder(p)}
         <span class="note">${lang === "es" ? p.noteEs : p.noteEn}</span>
       </a>
     </article>`).join("");
@@ -170,7 +170,7 @@ function render() {
 
   document.getElementById("langsGrid").innerHTML = LANGS.map((l, i) => `
     <button class="langcard reveal" data-i="${i}">
-      <img class="langcard__flag" src="${ASSETS + l.flag}" alt="">
+      <img class="langcard__flag" src="${ASSETS + l.flag}" alt="" onerror="this.style.visibility='hidden'">
       <p class="langcard__name">${l[lang]}</p>
       <p class="langcard__level">${lang === "es" ? l.lvlEs : l.lvlEn}</p>
       <div class="meter">${[1, 2, 3, 4, 5].map((n) => `<i class="${n <= l.lvl ? "on" : ""}"></i>`).join("")}</div>
