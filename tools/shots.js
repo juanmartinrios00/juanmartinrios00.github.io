@@ -3,6 +3,7 @@ const { chromium, devices } = require("playwright");
 const fs = require("fs");
 
 const SITES = {
+  ref: "https://www.sebg.ch/",
   pulso: "https://pulsoresearch.com",
   virasoro: "https://martinvirasoro.com",
   bloomsbury: "https://bloomsburyliving.com",
@@ -29,9 +30,10 @@ async function settle(page) {
       await desk.goto(url, { waitUntil: "networkidle", timeout: 60000 });
       await settle(desk);
       const h = await desk.evaluate(() => document.body.scrollHeight);
-      for (let i = 0, y = 0; y < h && i < 8; i++, y += 900) {
+      const step = name === "ref" ? 450 : 900, max = name === "ref" ? 60 : 8;
+      for (let i = 0, y = 0; y < h && i < max; i++, y += step) {
         await desk.evaluate((y) => window.scrollTo(0, y), y);
-        await desk.waitForTimeout(900);
+        await desk.waitForTimeout(name === "ref" ? 1400 : 900);
         await desk.screenshot({ path: `shots/raw/${name}-d${i}.jpg`, type: "jpeg", quality: 80 });
       }
       await desk.close();
