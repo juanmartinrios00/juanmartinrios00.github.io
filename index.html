@@ -1,9 +1,151 @@
-<html>
-
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juan Martín Rios · Full stack developer</title>
+  <meta name="description" content="Juan Martín Rios, full stack developer en Buenos Aires. Hago apps web de la base de datos para arriba.">
+  <meta name="theme-color" content="#ff5a1f">
+  <meta property="og:title" content="Juan Martín Rios · Full stack developer">
+  <meta property="og:description" content="Hago apps web de la base de datos para arriba.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Caveat:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23ff5a1f'/><text x='50' y='66' font-size='46' text-anchor='middle' font-family='Arial' font-weight='700' fill='white'>J</text></svg>">
+</head>
 <body>
-  <h1>YOUR NAME</h1>
-  <p>Welcome to my website!</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
-</body>
+  <header class="nav">
+    <a href="#top" class="nav__logo">juan<span>.</span></a>
+    <nav class="nav__links">
+      <a href="#trabajo" data-i18n="nav.work">Trabajo</a>
+      <a href="#stack" data-i18n="nav.stack">Stack</a>
+      <a href="#experiencia" data-i18n="nav.exp">Experiencia</a>
+      <button class="lang" id="lang" aria-label="Cambiar idioma">EN</button>
+      <a href="#contacto" class="btn btn--small" data-i18n="nav.contact">Escribime</a>
+    </nav>
+  </header>
 
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__sun" aria-hidden="true"></div>
+      <div class="hero__stage" id="stage">
+        <p class="note note--hero" id="buddyNote" data-i18n="hero.psst">Psst. Agarrame y arrastrame.</p>
+        <svg class="arrow arrow--hero" viewBox="0 0 120 80" aria-hidden="true"><path d="M8 10 C 40 0, 90 20, 100 62" /><path d="M86 52 L100 64 L106 46" /></svg>
+        <div class="buddy" id="buddy" role="img" aria-label="Juancito, el personaje del sitio, tomando mate">
+          <div class="buddy__hat" id="hat"></div>
+          <svg viewBox="0 0 200 240" class="buddy__svg">
+            <!-- cuerpo -->
+            <path d="M48 230 C 46 170, 66 150, 100 150 C 134 150, 154 170, 152 230 Z" fill="var(--ink)"/>
+            <path d="M88 150 L100 172 L112 150 Z" fill="var(--paper)"/>
+            <!-- cabeza -->
+            <ellipse cx="100" cy="92" rx="58" ry="62" fill="#f2c9a0"/>
+            <!-- pelo -->
+            <path d="M42 84 C 40 40, 70 24, 104 26 C 140 28, 162 48, 158 86 C 150 64, 136 56, 120 58 C 112 46, 96 44, 86 54 C 72 50, 54 60, 42 84 Z" fill="#3b2418"/>
+            <!-- ojos -->
+            <g class="buddy__eyes">
+              <ellipse cx="78" cy="96" rx="7" ry="9" fill="var(--ink)"/>
+              <ellipse cx="122" cy="96" rx="7" ry="9" fill="var(--ink)"/>
+              <circle cx="80" cy="93" r="2.4" fill="#fff"/>
+              <circle cx="124" cy="93" r="2.4" fill="#fff"/>
+            </g>
+            <!-- cachetes -->
+            <circle cx="64" cy="118" r="9" fill="#ff8a6b" opacity=".55"/>
+            <circle cx="136" cy="118" r="9" fill="#ff8a6b" opacity=".55"/>
+            <!-- sonrisa -->
+            <path class="buddy__mouth" d="M86 124 Q100 138 114 124" stroke="var(--ink)" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <!-- mate -->
+            <g class="buddy__mate">
+              <path d="M140 176 C 138 210, 182 210, 180 176 Z" fill="#8a5a2b"/>
+              <rect x="136" y="170" width="48" height="10" rx="5" fill="#c9a14a"/>
+              <path d="M170 172 L188 130" stroke="#c9c9c9" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="152" cy="196" r="12" fill="#f2c9a0"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="hero__text">
+        <p class="hero__hi" data-i18n="hero.hi">Hola, soy Juan 👋 Scrolleá un poco.</p>
+        <h1 class="hero__title" data-i18n-html="hero.title">Hago apps web de<br>la base de datos<br><em>para arriba.</em></h1>
+        <p class="hero__intro" data-i18n="hero.intro">Soy full stack developer en Buenos Aires. Arranco por el modelo de datos y las APIs y termino en la interfaz, que es donde más me divierto. Tengo ojo de diseño, así que lo que hago funciona y además se ve bien.</p>
+        <div class="hero__cta">
+          <a href="#contacto" class="btn" data-i18n="hero.cta">Hablemos</a>
+          <a href="https://juanmartinrios.netlify.app/assets/Juan%20Martin%20Rios%20-%20CV.pdf" class="btn btn--ghost" target="_blank" rel="noopener" data-i18n="hero.cv">Bajá mi CV</a>
+          <span class="note note--inline" data-i18n="hero.open">← buscando laburo, part o full time</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS DESTACADOS -->
+    <section class="featured" id="trabajo">
+      <p class="eyebrow" data-i18n="feat.eyebrow">// Algunas cosas que hice</p>
+      <div id="featured"></div>
+    </section>
+
+    <!-- TODO EL TRABAJO -->
+    <section class="allwork">
+      <div class="section-head">
+        <h2 data-i18n="all.title">Todo el trabajo</h2>
+        <p class="note" data-i18n="all.note">pasá el mouse, hay fotitos ↓</p>
+      </div>
+      <ul class="worklist" id="worklist"></ul>
+    </section>
+
+    <!-- STACK -->
+    <section class="stack" id="stack">
+      <div class="section-head">
+        <h2 data-i18n="stack.title">Con qué laburo</h2>
+        <p class="note" data-i18n="stack.note">sí, también hago backend ✌️</p>
+      </div>
+      <div class="stack__grid" id="stackGrid"></div>
+    </section>
+
+    <!-- IDIOMAS -->
+    <section class="langs">
+      <div class="section-head">
+        <h2 data-i18n="langs.title">Idiomas que hablo</h2>
+        <p class="note" data-i18n="langs.note">hacé click en una bandera</p>
+      </div>
+      <div class="langs__grid" id="langsGrid"></div>
+    </section>
+
+    <!-- EXPERIENCIA -->
+    <section class="exp" id="experiencia">
+      <div class="section-head">
+        <h2 data-i18n="exp.title">Por dónde anduve</h2>
+        <p class="note" data-i18n="exp.note">lo más nuevo arriba</p>
+      </div>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contact" id="contacto">
+      <p class="eyebrow" data-i18n="contact.eyebrow">// ¿Tenés un proyecto o un puesto?</p>
+      <h2 class="contact__title" data-i18n-html="contact.title">Estoy buscando<br>mi próximo equipo.</h2>
+      <p class="contact__text" data-i18n="contact.text">Si estás armando producto y necesitás a alguien que se banque el front, el back y los datos, escribime. Contesto rápido, lo prometo.</p>
+      <div class="contact__mail">
+        <button class="mail" id="mail" data-mail="riosjuanm10@gmail.com">riosjuanm10@gmail.com</button>
+        <span class="note note--mail" id="mailNote" data-i18n="contact.copy">Escribime cuando quieras. Hacé click y se copia.</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__links">
+      <a href="https://linkedin.com/in/juan-martin-rios" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/juanmartinrios00" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://juanmartinrios.netlify.app/assets/Juan%20Martin%20Rios%20-%20CV.pdf" target="_blank" rel="noopener">CV</a>
+    </div>
+    <p>© <span id="year"></span> Juan Martín Rios · Buenos Aires</p>
+    <div class="footer__fun">
+      <button id="dress" data-i18n="footer.dress">Vestime</button>
+      <button id="trick" data-i18n="footer.trick">Hacé un truco</button>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="main.js"></script>
+</body>
 </html>
