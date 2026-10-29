@@ -41,7 +41,7 @@ h1, h2, h3 { margin: 0; font-stretch: 112%; letter-spacing: -.035em; line-height
 /* ---------- hero ---------- */
 .hero {
   --line: rgba(255, 255, 255, .07);
-  background-color: var(--night); color: var(--paper);
+  background-color: var(--blue); color: var(--paper);
   min-height: 100vh; min-height: 100svh;
   display: flex; flex-direction: column; justify-content: space-between;
   padding: 28px var(--gutter) 40px;
@@ -53,7 +53,7 @@ h1, h2, h3 { margin: 0; font-stretch: 112%; letter-spacing: -.035em; line-height
 .hero__actions { display: flex; gap: 12px; }
 .hero__title { font-size: clamp(52px, 7.4vw, 116px); white-space: nowrap; }
 .hero__title b { font-weight: 600; }
-.hero__title i { font-style: normal; font-weight: 300; color: #8fa6ff; }
+.hero__title i { font-style: normal; font-weight: 300; }
 @media (max-width: 760px) {
   .hero { justify-content: flex-start; gap: 12vh; }
   .hero__title { white-space: normal; font-size: clamp(42px, 11.5vw, 80px); }
@@ -86,14 +86,12 @@ h1, h2, h3 { margin: 0; font-stretch: 112%; letter-spacing: -.035em; line-height
 .buddy.pos-avatar { --bw: 86px; --bx: var(--gutter); bottom: 20px; }
 .buddy__frame { transition: border-radius .4s, box-shadow .4s; }
 .buddy.pos-avatar .buddy__frame { border-radius: 50%; overflow: hidden; background: var(--ink); box-shadow: 0 0 0 3px var(--paper), 0 0 0 6px var(--blue); aspect-ratio: 1; }
-.buddy.pos-avatar .buddy__canvas { transform-origin: 54% 24%; transform: translate(-4%, 32%) scale(2.1); animation: none; }
+.buddy.pos-avatar .buddy__canvas { transform-origin: 54% 24%; transform: translate(-4%, 32%) scale(2.1); }
 .buddy__canvas {
   display: block; width: 100%; height: auto; aspect-ratio: 1; cursor: grab;
   transform-origin: 50% 100%; transition: transform .5s;
-  animation: breathe 4.5s ease-in-out infinite;
 }
-.buddy.held .buddy__canvas { cursor: grabbing; animation: none; }
-@keyframes breathe { 50% { scale: 1.012 1.02; } }
+.buddy.held .buddy__canvas { cursor: grabbing; }
 @media (max-width: 760px) { .buddy { --bw: 200px; } .buddy.pos-avatar { --bw: 60px; } }
 
 .bubble {
@@ -221,23 +219,23 @@ h1, h2, h3 { margin: 0; font-stretch: 112%; letter-spacing: -.035em; line-height
 
 /* ---------- contacto ---------- */
 .contact {
-  --line: rgba(255, 255, 255, .08);
-  background-color: var(--blue); color: var(--paper);
+  --line: rgba(255, 255, 255, .05);
+  background-color: var(--night); color: var(--paper);
   min-height: 100vh; min-height: 100svh; padding: 18vh var(--gutter) 30px;
   display: flex; flex-direction: column; justify-content: space-between; gap: 60px;
 }
 .contact h2 { font-size: clamp(52px, 7.4vw, 110px); }
-.contact__sub { color: #dfe5ff; font-size: 18px; margin: 18px 0 40px; }
+.contact__sub { color: #9c998f; font-size: 18px; margin: 18px 0 40px; }
 .contact__mail {
   background: none; border: 0; padding: 0; font-size: clamp(24px, 3.4vw, 50px); font-weight: 300; font-stretch: 105%;
   letter-spacing: -.02em; border-bottom: 1px solid currentColor; color: var(--paper); word-break: break-all; text-align: left;
 }
-.contact__mail:hover { color: #ffd84d; }
+.contact__mail:hover { color: #9db1ff; }
 .contact__foot { display: grid; gap: 14px; max-width: 760px; }
 .contact__links { display: flex; gap: 14px 50px; flex-wrap: wrap; }
 .contact__links a { font-size: clamp(22px, 2vw, 28px); font-weight: 500; text-decoration: none; font-stretch: 108%; }
-.contact__links a:hover { color: #ffd84d; }
-.contact__small { display: flex; gap: 10px 50px; flex-wrap: wrap; font-size: 12px; color: #c9d2ff; }
+.contact__links a:hover { color: #9db1ff; }
+.contact__small { display: flex; gap: 10px 50px; flex-wrap: wrap; font-size: 12px; color: #8a877e; }
 .contact__small button { background: none; border: 0; padding: 0; color: inherit; font-size: 12px; }
 .contact__small button:hover { color: var(--paper); }
 @media (max-width: 760px) { .contact { padding-bottom: 210px; } }

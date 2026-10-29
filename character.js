@@ -1,8 +1,10 @@
-// Personaje: cuatro fotogramas de la ilustración de Juan (base, parpadeo, saludo, hablando).
+// Personaje: la ilustración de Juan, quieta. Los otros fotogramas (parpadeo, saludo, hablando)
+// quedan cargables poniendo ANIMATED en true.
 // Se pinta en un canvas y se pasa por un dither 8x8 en blanco y negro (estilo "pixel").
 // Con style: "color" se ve la ilustración original.
 const Character = (() => {
-  const FRAMES = { base: "juan-base", blink: "juan-blink", wave: "juan-wave", talk: "juan-talk" };
+  const ANIMATED = false;
+  const FRAMES = ANIMATED ? { base: "juan-base", blink: "juan-blink", wave: "juan-wave", talk: "juan-talk" } : { base: "juan-base" };
   const SIZE = { color: 640, pixel: 260 };
   const INK = [17, 17, 17], PAPER = [243, 241, 234];
 
@@ -47,6 +49,7 @@ const Character = (() => {
   }
 
   function frameName() {
+    if (!ANIMATED) return "base";
     if (state.waving) return "wave";
     if (state.eyes !== "open") return "blink";
     if (state.mouth === "open") return "talk";
@@ -75,11 +78,11 @@ const Character = (() => {
     out = canvas; o = out.getContext("2d");
     out.width = out.height = SIZE.color;
     Promise.all(load(src)).then(() => {
-      ready = Object.keys(imgs).length === 4;
+      ready = Object.keys(imgs).length === Object.keys(FRAMES).length;
       render();
       wave(1600);
     });
-    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!ANIMATED || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     (function blink() {
       setTimeout(() => {
         if (state.eyes === "open" && state.mouth !== "open" && !state.waving) {
@@ -93,6 +96,7 @@ const Character = (() => {
 
   let waveTimer;
   function wave(ms = 1200) {
+    if (!ANIMATED) return;
     state.waving = true; render();
     clearTimeout(waveTimer);
     waveTimer = setTimeout(() => { state.waving = false; render(); }, ms);

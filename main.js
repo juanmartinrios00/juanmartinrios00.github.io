@@ -116,7 +116,7 @@ const EXP = [
 
 const T = {
   es: {
-    role: "Full stack developer · Buscando laburo", cta: "Contratame",
+    role: "Full stack developer · En búsqueda de trabajo", cta: "Contratame",
     title: "<b>Busco equipo<br>para construir</b><br><i>cosas que andan.</i>",
     about: "Soy full stack developer en Buenos Aires y busco *sumarme a un equipo de producto*, part time o full time. Desde 2023 hice webs, tiendas y sistemas para clientes, y cofundé un SaaS. Me gusta trabajar de la base de datos a la interfaz, aprender rápido y que lo que hago se vea tan bien como funciona.",
     "stack.title": "Mi stack", "stack.count": "Lo que uso todos los días",
@@ -126,12 +126,12 @@ const T = {
     "contact.title": "¿Buscás un dev?", "contact.sub": "Disponibilidad inmediata para sumarme a tu equipo, part time o full time, remoto o híbrido.",
     copied: "¡Copiado!", projects: "proyectos", available: "Disponible para trabajar",
     say: {
-      hero: "Hola, soy **Juan** y estoy buscando laburo. Bajá que te muestro qué sé hacer.",
+      hero: "Hola, soy **Juan** y estoy en búsqueda de trabajo. Bajá que te muestro qué sé hacer.",
       stack: "Sí, también hago **backend**. Pasá el mouse por los logos.",
       langs: "Hablo **4 idiomas**. Tocá uno y te saludo.",
-      exp: "Laburando y estudiando en la **UTN** al mismo tiempo.",
+      exp: "Trabajando y estudiando en la **UTN** al mismo tiempo.",
       work: "Todo esto lo hice yo. Imaginate en **tu equipo**.",
-      contact: "Si llegaste hasta acá, **contratame** jaja.",
+      contact: "Si llegaste hasta acá, **hablemos**.",
       copy: "Mandame un mail y te contesto en el día. **Click** y se copia.",
       grab: ["¡Epa! **Bajame** despacio.", "Wiii, ¡estoy **volando**!", "¡Ey! Que me **despeinás**."],
     },
@@ -152,7 +152,7 @@ const T = {
       langs: "I speak **4 languages**. Tap one and I'll say hi.",
       exp: "Working and studying at **UTN** at the same time.",
       work: "I built all of this. Picture me on **your team**.",
-      contact: "Made it this far? Go on, **hire me**.",
+      contact: "Made it this far? Let's **talk**.",
       copy: "Email me and I'll reply the same day. **Click** to copy.",
       grab: ["Hey! Put me **down** gently.", "Wheee, I'm **flying**!", "Hey! You're messing up my **hair**."],
     },
