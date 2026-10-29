@@ -1,330 +1,421 @@
-// Assets del portfolio anterior (thumbnails, banderas).
-const ASSETS = "https://juanmartinrios.netlify.app/assets/";
-
 // ---------- contenido ----------
-// Para editar: cada texto tiene versión es / en.
-const FEATURED = [
+// Cada texto tiene versión es / en. Lo que va entre **asteriscos** se resalta en el globo.
+
+const PROJECTS = [
   {
-    name: "Dentiqly",
-    url: "https://dentiqly.com",
-    thumb: "thumb-dentiqly.png",
-    tags: ["TypeScript", "REST APIs", "React", "PostgreSQL"],
-    es: [
-      "Primero, Dentiqly, un SaaS para gestionar clínicas dentales que cofundé.",
-      "Hice el modelo de datos, las APIs REST en TypeScript y las interfaces. Agenda, historias clínicas, odontograma digital y facturación: todo lo que un consultorio usa todos los días tiene que andar rápido y no perder nada.",
-    ],
-    en: [
-      "First up, Dentiqly, a SaaS for running dental clinics that I co-founded.",
-      "I built the data model, the REST APIs in TypeScript and the interfaces. Scheduling, clinical records, a digital odontogram and billing: everything a clinic uses every day has to be fast and never lose a thing.",
-    ],
-    bubbles: [
-      { x: "6%", y: "10%", es: "Turnos online, el paciente reserva solo", en: "Online booking, patients book themselves" },
-      { x: "52%", y: "42%", es: "Odontograma digital, diente por diente", en: "Digital odontogram, tooth by tooth" },
-      { x: "10%", y: "72%", es: "Recordatorios por WhatsApp 📲", en: "WhatsApp reminders 📲" },
+    name: "Dentiqly", url: "https://dentiqly.com", domain: "dentiqly.com",
+    bg: "#0c2347", fg: "#f3f1ea", hl: "#6f9bff", acc: "glasses",
+    steps: [
+      { d: "dentiqly-d0", m: "dentiqly-m0",
+        es: "Primero, **Dentiqly**. Un SaaS para clínicas dentales que cofundé.",
+        en: "First up, **Dentiqly**. A SaaS for dental clinics that I co-founded." },
+      { d: "dentiqly-d2", m: "dentiqly-m2",
+        es: "Hice el **modelo de datos**, las APIs en TypeScript y todo el panel.",
+        en: "I built the **data model**, the TypeScript APIs and the whole dashboard." },
+      { d: "dentiqly-d1", m: "dentiqly-m1",
+        es: "Cada diente tiene su historia en un **odontograma interactivo**.",
+        en: "Every tooth has its own history in an **interactive odontogram**." },
+      { d: "dentiqly-d5", m: "dentiqly-m0",
+        es: "Y los turnos se confirman solos por **WhatsApp**. Chau ausentes.",
+        en: "And appointments confirm themselves over **WhatsApp**. Bye no-shows." },
     ],
   },
   {
-    name: "Diagnóstico de marca",
-    url: null,
-    thumb: null,
-    client: "La Cocina de las Marcas",
-    tags: ["React", "Node.js", "Express", "Data viz"],
-    es: [
-      "Después, una app de diagnóstico de marca para La Cocina de las Marcas.",
-      "Respondés un cuestionario, la app calcula un puntaje y te muestra en gráficos dónde está parada tu marca. Hice el front en React, el back en Node y la lógica de scoring que une las dos puntas.",
-    ],
-    en: [
-      "Next, a brand diagnostic app for La Cocina de las Marcas.",
-      "You answer a questionnaire, the app scores it and shows you in charts where your brand stands. I built the React front, the Node back and the scoring logic that ties them together.",
-    ],
-    bubbles: [
-      { x: "6%", y: "10%", es: "Cuestionario paso a paso", en: "Step-by-step questionnaire" },
-      { x: "52%", y: "80%", es: "El scoring lo calcula el back", en: "Scoring runs on the backend" },
-    ],
-  },
-  {
-    name: "Pulso Research",
-    url: "https://pulsoresearch.com",
-    thumb: "thumb-pulso.png",
-    tags: ["WordPress", "Elementor", "Diseño"],
-    es: [
-      "También hice el sitio de Pulso Research, una consultora de opinión pública.",
-      "Tienen un montón de estudios distintos, así que la idea fue ordenarlos: cada indicador tiene su sección y los textos largos se abren solo si los querés leer.",
-    ],
-    en: [
-      "I also built the site for Pulso Research, a public opinion consultancy.",
-      "They have lots of different studies, so the goal was to organize them: each indicator gets its own section and long texts only open if you want to read them.",
-    ],
-    bubbles: [
-      { x: "6%", y: "12%", es: "Ranking de confianza en líderes (RCP)", en: "Trust ranking of leaders (RCP)" },
-      { x: "50%", y: "46%", es: "Paneles “Leer más” que se despliegan", en: "Expandable “Read more” panels" },
-      { x: "8%", y: "74%", es: "Contacto directo por WhatsApp", en: "Contact straight to WhatsApp" },
+    name: "Pulso Research", url: "https://pulsoresearch.com", domain: "pulsoresearch.com",
+    bg: "#e2ff3d", fg: "#111", hl: "#5a5f00", acc: "headset", light: true,
+    steps: [
+      { d: "pulso-d0", m: "pulso-m0",
+        es: "Después, **Pulso Research**, una consultora de opinión pública.",
+        en: "Next, **Pulso Research**, a public opinion consultancy." },
+      { d: "pulso-d2", m: "pulso-m2",
+        es: "Sus servicios van en una lista con **“Leer más”** que se despliega.",
+        en: "Their services sit in a list with **“Read more”** panels that unfold." },
+      { d: "pulso-d4", m: "pulso-m1",
+        es: "Esta me encanta: **Medir, Interpretar, Orientar** se arma mientras scrolleás.",
+        en: "My favourite bit: **Measure, Interpret, Guide** builds itself as you scroll." },
+      { d: "pulso-d7", m: "pulso-m2",
+        es: "Y cada indicador tiene su lugar: **RCP, Brújula Social y Pulso Consumo**.",
+        en: "Each index gets its own spot: **RCP, Brújula Social and Pulso Consumo**." },
     ],
   },
   {
-    name: "Martín Virasoro",
-    url: "https://martinvirasoro.com",
-    thumb: "thumb-virasoro.png",
-    tags: ["WordPress", "Elementor", "WooCommerce"],
-    es: [
-      "Y por último, el sitio de Martín Virasoro, autor y creador del Método RAM.",
-      "Libros, audiolibros, cursos, podcast y retiros en un solo lugar, con tienda propia para vender todo sin intermediarios.",
+    name: "Martín Virasoro", url: "https://martinvirasoro.com", domain: "martinvirasoro.com",
+    bg: "#24443a", fg: "#f3f1ea", hl: "#d9b26a", acc: "mate",
+    steps: [
+      { d: "virasoro-d0", m: "virasoro-m0",
+        es: "Este es de **Martín Virasoro**, autor y creador del Método RAM.",
+        en: "This one is for **Martín Virasoro**, author and creator of the RAM Method." },
+      { d: "virasoro-d1", m: "virasoro-m1",
+        es: "Tiene **tienda propia**: libros, audiolibros y hasta su juego 365.",
+        en: "It has **its own shop**: books, audiobooks, even his 365 game." },
+      { d: "virasoro-d2", m: "virasoro-m2",
+        es: "Cursos, podcast y retiros, **cada cosa con su página**.",
+        en: "Courses, podcast and retreats, **each with its own page**." },
+      { d: "virasoro-d5", m: "virasoro-m0",
+        es: "Abajo, su **Instagram** y el newsletter. Mate de por medio.",
+        en: "At the bottom, his **Instagram** and the newsletter. Mate included." },
     ],
-    en: [
-      "And finally, the site for Martín Virasoro, author and creator of the RAM Method.",
-      "Books, audiobooks, courses, podcast and retreats in one place, with its own shop to sell everything directly.",
-    ],
-    bubbles: [
-      { x: "6%", y: "12%", es: "Tienda con carrito (WooCommerce) 🛒", en: "Shop with a cart (WooCommerce) 🛒" },
-      { x: "52%", y: "56%", es: "Cursos, libros y retiros, cada uno con su página", en: "Courses, books and retreats, each with its own page" },
+  },
+  {
+    name: "Wildcat Club", url: "https://www.wildcat.club/", domain: "wildcat.club",
+    bg: "#e9dfcf", fg: "#1c2a26", hl: "#a8673b", acc: "cowboy", light: true,
+    steps: [
+      { d: "wildcat-d0", m: "wildcat-m0",
+        es: "Último: **Wildcat Club**, seis residencias de lujo en Austin, Texas. Yeehaw.",
+        en: "Last one: **Wildcat Club**, six luxury homes in Austin, Texas. Yeehaw." },
+      { d: "wildcat-d1", m: "wildcat-m1",
+        es: "Un **masterplan** en 3D para ver dónde cae cada casa en la montaña.",
+        en: "A 3D **masterplan** shows where each house sits on the mountain." },
+      { d: "wildcat-d2", m: "wildcat-m2",
+        es: "Y las seis casas en un **slider**, con su arquitecto y los metros.",
+        en: "And all six homes in a **slider**, with architect and square feet." },
     ],
   },
 ];
 
 const WORK = [
-  { name: "Dentiqly", url: "https://dentiqly.com", thumb: "thumb-dentiqly.png", kind: { es: "SaaS · Cofundador", en: "SaaS · Co-founder" }, year: "2026" },
-  { name: "Diagnóstico de marca", url: null, thumb: null, kind: { es: "React + Node · La Cocina de las Marcas", en: "React + Node · La Cocina de las Marcas" }, year: "2025" },
-  { name: "Pulso Research", url: "https://pulsoresearch.com", thumb: "thumb-pulso.png", kind: { es: "Consultora · WordPress", en: "Consultancy · WordPress" }, year: "" },
-  { name: "Martín Virasoro", url: "https://martinvirasoro.com", thumb: "thumb-virasoro.png", kind: { es: "Autor y tienda · WordPress", en: "Author & shop · WordPress" }, year: "" },
-  { name: "Bloomsbury Living", url: "https://bloomsburyliving.com", thumb: "thumb-bloomsbury.png", kind: { es: "Real estate · WordPress", en: "Real estate · WordPress" }, year: "" },
-  { name: "Catalfumo", url: "https://catalfumo.com", thumb: "thumb-catalfumo.png", kind: { es: "Desarrolladora · WordPress", en: "Developer firm · WordPress" }, year: "" },
-  { name: "Wildcat Club", url: "https://www.wildcat.club/", thumb: "thumb-wildcat.png", kind: { es: "Real estate de lujo", en: "Luxury real estate" }, year: "" },
+  { name: "Dentiqly", img: "dentiqly-d0", url: "https://dentiqly.com", es: "SaaS · Cofundador", en: "SaaS · Co-founder", big: true },
+  { name: "Pulso Research", img: "pulso-d0", url: "https://pulsoresearch.com", es: "Consultora", en: "Consultancy", big: true },
+  { name: "Martín Virasoro", img: "virasoro-d0", url: "https://martinvirasoro.com", es: "Autor y tienda", en: "Author & shop" },
+  { name: "Wildcat Club", img: "wildcat-d0", url: "https://www.wildcat.club/", es: "Real estate", en: "Real estate" },
+  { name: "Bloomsbury Living", img: "bloomsbury-d0", url: "https://bloomsburyliving.com", es: "Real estate", en: "Real estate" },
+  { name: "Catalfumo", img: "catalfumo-d0", url: "https://catalfumo.com", es: "Desarrolladora", en: "Developer" },
+  { name: "Diagnóstico de marca", fake: true, es: "React + Node · La Cocina de las Marcas", en: "React + Node · La Cocina de las Marcas", big: true },
 ];
 
 const STACK = [
-  { title: "Frontend", es: "// donde más me divierto", en: "// where I have the most fun", items: ["React", "TypeScript", "JavaScript", "HTML5", "CSS3"] },
-  { title: "Backend", es: "// APIs que no se caen", en: "// APIs that stay up", items: ["Node.js", "Express", "Python", "FastAPI", "Flask", "PHP"] },
-  { title: "Datos", titleEn: "Data", es: "// todo empieza por el modelo", en: "// it all starts with the model", items: ["PostgreSQL", "MySQL", "SQL", "Pandas", "Power BI"] },
-  { title: "Diseño y web", titleEn: "Design & web", es: "// ojo de diseñador, manos de dev", en: "// designer's eye, dev's hands", items: ["Figma", "WordPress", "WooCommerce", "Git", "REST APIs"] },
-  { title: "IA y automatización", titleEn: "AI & automation", es: "// que las máquinas hagan lo aburrido", en: "// let machines do the boring bits", items: ["APIs de IA", "Integraciones", "Automatizaciones"], itemsEn: ["AI APIs", "Integrations", "Automations"] },
+  { es: "Frontend", en: "Frontend", noteEs: "Donde más me divierto.", noteEn: "Where I have the most fun.",
+    items: [["React", "react"], ["TypeScript", "typescript"], ["JavaScript", "javascript"], ["HTML5", "html5"], ["CSS3", "css3"]] },
+  { es: "Backend", en: "Backend", noteEs: "APIs que no se caen.", noteEn: "APIs that stay up.",
+    items: [["Node.js", "nodedotjs"], ["Express", "express"], ["Python", "python"], ["FastAPI", "fastapi"], ["Flask", "flask"], ["PHP", "php"]] },
+  { es: "Datos", en: "Data", noteEs: "Todo empieza por el modelo.", noteEn: "It all starts with the model.",
+    items: [["PostgreSQL", "postgresql"], ["MySQL", "mysql"], ["SQL", "db"], ["Pandas", "pandas"], ["Power BI", "chart"]] },
+  { es: "Diseño y web", en: "Design & web", noteEs: "Ojo de diseño, manos de dev.", noteEn: "Designer's eye, dev's hands.",
+    items: [["Figma", "figma"], ["Framer", "framer"], ["WordPress", "wordpress"], ["Elementor", "elementor"], ["WooCommerce", "woocommerce"], ["Git", "git"]] },
+  { es: "IA y automatización", en: "AI & automation", noteEs: "Que las máquinas hagan lo aburrido.", noteEn: "Let machines do the boring bits.",
+    items: [["APIs de IA", "spark", "AI APIs"], ["Integraciones", "plug", "Integrations"], ["Automatizaciones", "bolt", "Automations"], ["REST APIs", "api"]] },
 ];
 
 const LANGS = [
-  { flag: "flag-es.svg", es: "Español", en: "Spanish", lvl: 5, lvlEs: "Nativo", lvlEn: "Native", hello: "¡Hola! ¿Tomamos un mate?" },
-  { flag: "flag-us.svg", es: "Inglés", en: "English", lvl: 4, lvlEs: "Avanzado", lvlEn: "Advanced", hello: "Hi! Let's build something." },
-  { flag: "flag-pt.svg", es: "Portugués", en: "Portuguese", lvl: 3, lvlEs: "Intermedio", lvlEn: "Intermediate", hello: "Oi! Tudo bem?" },
-  { flag: "flag-it.svg", es: "Italiano", en: "Italian", lvl: 3, lvlEs: "Intermedio", lvlEn: "Intermediate", hello: "Ciao! Come va?" },
+  { flag: "ar", es: "Español", en: "Spanish", lvl: 5, lvlEs: "Nativo", lvlEn: "Native", hello: "¡Hola! ¿Tomamos unos mates?" },
+  { flag: "us", es: "Inglés", en: "English", lvl: 4, lvlEs: "Avanzado", lvlEn: "Advanced", hello: "Hi! Let's build **something cool**." },
+  { flag: "br", es: "Portugués", en: "Portuguese", lvl: 3, lvlEs: "Intermedio", lvlEn: "Intermediate", hello: "Oi! **Tudo bem**?" },
+  { flag: "it", es: "Italiano", en: "Italian", lvl: 3, lvlEs: "Intermedio", lvlEn: "Intermediate", hello: "Ciao! **Come va**?" },
 ];
 
 const EXP = [
-  { year: "2026", es: { role: "Cofundador y developer", where: "Dentiqly", what: "Modelo de datos, APIs REST en TypeScript e interfaces de un SaaS para clínicas dentales." },
-    en: { role: "Co-founder & developer", where: "Dentiqly", what: "Data model, TypeScript REST APIs and interfaces for a SaaS for dental clinics." } },
-  { year: "2025", es: { role: "Full stack developer", where: "La Cocina de las Marcas", what: "App de diagnóstico de marca en React y Node (cuestionario, scoring y visualización), más mantenimiento web y desarrollos a medida." },
-    en: { role: "Full stack developer", where: "La Cocina de las Marcas", what: "Brand diagnostic app in React and Node (questionnaire, scoring and charts), plus web maintenance and custom builds." } },
-  { year: "2024", es: { role: "Formación en programación", where: "Estudio", what: "TypeScript, React, C++ y SQL, sin dejar de entregar proyectos." },
-    en: { role: "Programming training", where: "Study", what: "TypeScript, React, C++ and SQL, while still shipping client projects." } },
-  { year: "2022 →", es: { role: "Desarrollador web freelance", where: "Freelance", what: "E-commerce, sistemas de gestión y desarrollos a medida con JavaScript, PHP y MySQL." },
-    en: { role: "Freelance web developer", where: "Freelance", what: "E-commerce, management systems and custom builds with JavaScript, PHP and MySQL." } },
+  { year: "2026", where: "Dentiqly", es: ["Cofundador y developer", "Modelo de datos, APIs REST en TypeScript e interfaces de un SaaS para clínicas dentales."],
+    en: ["Co-founder & developer", "Data model, TypeScript REST APIs and interfaces for a SaaS for dental clinics."] },
+  { year: "2025", where: "La Cocina de las Marcas", es: ["Full stack developer", "App de diagnóstico de marca en React y Node: cuestionario, scoring y gráficos. Más mantenimiento web y desarrollos a medida."],
+    en: ["Full stack developer", "Brand diagnostic app in React and Node: questionnaire, scoring and charts. Plus web maintenance and custom builds."] },
+  { year: "2024", where: { es: "Formación", en: "Training" }, es: ["Programación", "TypeScript, React, C++ y SQL, sin dejar de entregar proyectos."],
+    en: ["Programming", "TypeScript, React, C++ and SQL, while still shipping client work."] },
+  { year: "2022 →", where: "Freelance", es: ["Desarrollador web", "E-commerce, sistemas de gestión y sitios a medida con WordPress, Framer, JavaScript, PHP y MySQL."],
+    en: ["Web developer", "E-commerce, management systems and custom sites with WordPress, Framer, JavaScript, PHP and MySQL."] },
 ];
 
-const I18N = {
+const T = {
   es: {
-    "nav.work": "Trabajo", "nav.stack": "Stack", "nav.exp": "Experiencia", "nav.contact": "Escribime",
-    "hero.psst": "Psst. Agarrame y arrastrame.", "hero.hi": "Hola, soy Juan 👋 Scrolleá un poco.",
-    "hero.title": "Hago apps web de<br>la base de datos<br><em>para arriba.</em>",
-    "hero.intro": "Soy full stack developer en Buenos Aires. Arranco por el modelo de datos y las APIs y termino en la interfaz, que es donde más me divierto. Tengo ojo de diseño, así que lo que hago funciona y además se ve bien.",
-    "hero.cta": "Hablemos", "hero.cv": "Bajá mi CV", "hero.open": "← buscando laburo, part o full time",
-    "feat.eyebrow": "// Algunas cosas que hice", "feat.view": "Ver proyecto", "feat.private": "Es privado, pero te lo muestro en una call",
-    "all.title": "Todo el trabajo", "all.note": "pasá el mouse, hay fotitos ↓",
-    "stack.title": "Con qué laburo", "stack.note": "sí, también hago backend ✌️",
-    "langs.title": "Idiomas que hablo", "langs.note": "hacé click en una tarjeta",
-    "exp.title": "Por dónde anduve", "exp.note": "lo más nuevo arriba",
-    "contact.eyebrow": "// ¿Tenés un proyecto o un puesto?", "contact.title": "Estoy buscando<br>mi próximo equipo.",
-    "contact.text": "Si estás armando producto y necesitás a alguien que se banque el front, el back y los datos, escribime. Contesto rápido, lo prometo.",
-    "contact.copy": "Escribime cuando quieras. Hacé click y se copia.", "contact.copied": "¡Copiado!",
-    "footer.dress": "Vestime", "footer.trick": "Hacé un truco",
-    "buddy.grab": ["¡Epa! Bajame despacio.", "Wiii", "Ojo con el mate 🧉"], "buddy.back": "Ah, volviste. ¿Querés ver todo de nuevo?",
-    "buddy.trick": "¡Tadá!", "buddy.dress": "¿Me queda bien?",
+    role: "Full stack developer", cta: "Hablemos",
+    title: "<b>Hago webs<br>que funcionan</b><br><i>de punta a punta.</i>",
+    about: "Soy full stack developer en Buenos Aires. Desde 2022 hago webs, tiendas y sistemas para clientes, y hoy estoy construyendo mi propio SaaS. Me gusta trabajar *de la base de datos a la interfaz*, y que lo que hago se vea tan bien como funciona.",
+    "stack.title": "Mi stack", "stack.count": "Lo que uso todos los días",
+    "langs.title": "Idiomas", "langs.count": "4 idiomas",
+    "exp.title": "Experiencia", "exp.count": "Lo más nuevo arriba",
+    "work.title": "Todo el trabajo", view: "Ver proyecto",
+    "contact.title": "¿Tenés un proyecto?", "contact.sub": "Estoy buscando laburo, part time o full time.",
+    dress: "Vestime", trick: "Hacé un truco", copied: "¡Copiado!", projects: "proyectos",
+    say: {
+      hero: "Hola, soy **Juan**. Scrolleá y te muestro todo.",
+      stack: "Sí, también hago **backend**. Pasá el mouse por los logos.",
+      langs: "Hablo **4 idiomas**. Tocá uno y te saludo.",
+      exp: "Desde 2022 sin parar. Lo más nuevo, **arriba**.",
+      work: "Acá está **todo** lo que hice.",
+      contact: "Psst. Podés **agarrarme**.",
+      copy: "Escribime cuando quieras. **Hacé click** y se copia.",
+      grab: ["¡Epa! **Bajame** despacio.", "Wiii, ¡estoy **volando**!", "Ojo, que se me vuelca el **mate**."],
+      dress: "¿Me queda **bien**?", trick: "¡**Tadá**!",
+    },
   },
   en: {
-    "nav.work": "Work", "nav.stack": "Stack", "nav.exp": "Experience", "nav.contact": "Get in touch",
-    "hero.psst": "Psst. You can grab me.", "hero.hi": "Hi, I'm Juan 👋 Scroll a little.",
-    "hero.title": "I build web apps<br>from the database<br><em>all the way up.</em>",
-    "hero.intro": "I'm a full stack developer in Buenos Aires. I start with the data model and the APIs and end up in the interface, which is where I have the most fun. I've got an eye for design, so what I build works and looks good too.",
-    "hero.cta": "Let's talk", "hero.cv": "Get my CV", "hero.open": "← open to work, part or full time",
-    "feat.eyebrow": "// A few things I made", "feat.view": "View project", "feat.private": "It's private, happy to demo it on a call",
-    "all.title": "All work", "all.note": "hover, there are pictures ↓",
-    "stack.title": "What I work with", "stack.note": "yes, I do backend too ✌️",
-    "langs.title": "Languages I speak", "langs.note": "click a card",
-    "exp.title": "Where I've been", "exp.note": "newest first",
-    "contact.eyebrow": "// Got a project or a role?", "contact.title": "I'm looking for<br>my next team.",
-    "contact.text": "If you're building a product and need someone who can handle the front, the back and the data, write me. I answer fast, promise.",
-    "contact.copy": "Write me anytime. Click and it's copied.", "contact.copied": "Copied!",
-    "footer.dress": "Dress me up", "footer.trick": "Do a trick",
-    "buddy.grab": ["Hey! Put me down gently.", "Wheee", "Careful with the mate 🧉"], "buddy.back": "Oh hi, you're back. Want the tour again?",
-    "buddy.trick": "Ta-da!", "buddy.dress": "Does this suit me?",
+    role: "Full stack developer", cta: "Get in touch",
+    title: "<b>I build websites<br>that work</b><br><i>end to end.</i>",
+    about: "I'm a full stack developer in Buenos Aires. Since 2022 I've built websites, shops and systems for clients, and now I'm building my own SaaS. I like working *from the database to the interface*, and making things look as good as they work.",
+    "stack.title": "My stack", "stack.count": "What I use every day",
+    "langs.title": "Languages", "langs.count": "4 languages",
+    "exp.title": "Experience", "exp.count": "Newest first",
+    "work.title": "All work", view: "View project",
+    "contact.title": "Got a project?", "contact.sub": "I'm looking for work, part time or full time.",
+    dress: "Dress me up", trick: "Do a trick", copied: "Copied!", projects: "projects",
+    say: {
+      hero: "Hi, I'm **Juan**. Scroll down and I'll show you around.",
+      stack: "Yes, I do **backend** too. Hover the logos.",
+      langs: "I speak **4 languages**. Tap one and I'll say hi.",
+      exp: "Non-stop since 2022. Newest **on top**.",
+      work: "Here's **everything** I've made.",
+      contact: "Psst. You can **grab** me.",
+      copy: "Write me anytime. **Click** and it's copied.",
+      grab: ["Hey! Put me **down** gently.", "Wheee, I'm **flying**!", "Careful, my **mate** will spill."],
+      dress: "Does this **suit** me?", trick: "**Ta-da**!",
+    },
   },
 };
+
+// íconos que no son marcas
+const GENERIC = {
+  db: '<path fill="#336791" d="M12 2C7 2 3 3.6 3 5.5v13C3 20.4 7 22 12 22s9-1.6 9-3.5v-13C21 3.6 17 2 12 2Zm0 2c4.4 0 7 1.3 7 1.5S16.4 7 12 7 5 5.7 5 5.5 7.6 4 12 4Zm7 14.5c0 .2-2.6 1.5-7 1.5s-7-1.3-7-1.5v-2.7c1.6.8 4.2 1.2 7 1.2s5.4-.4 7-1.2v2.7Zm0-5c0 .2-2.6 1.5-7 1.5s-7-1.3-7-1.5v-2.7C6.6 11.6 9.2 12 12 12s5.4-.4 7-1.2v2.7Z"/>',
+  chart: '<g fill="#F2C811"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></g>',
+  spark: '<path fill="#2f56f0" d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7L12 2Zm7 13l1 2.6 2.6 1-2.6 1-1 2.6-1-2.6-2.6-1 2.6-1 1-2.6Z"/>',
+  plug: '<path fill="#111" d="M9 2v5H7v4a5 5 0 0 0 4 4.9V22h2v-6.1A5 5 0 0 0 17 11V7h-2V2h-2v5h-2V2H9Z"/>',
+  bolt: '<path fill="#FF6B00" d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/>',
+  api: '<path fill="#111" d="M8 5 1 12l7 7 1.4-1.4L3.8 12l5.6-5.6L8 5Zm8 0-1.4 1.4 5.6 5.6-5.6 5.6L16 19l7-7-7-7Z"/>',
+};
+function icon(key) {
+  if (GENERIC[key]) return `<svg viewBox="0 0 24 24" aria-hidden="true">${GENERIC[key]}</svg>`;
+  const i = ICONS[key];
+  const fill = ["000000", "150458"].includes(i.hex) ? "111111" : i.hex;
+  return `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#${fill}" d="${i.d}"/></svg>`;
+}
+
+const FLAGS = {
+  ar: '<svg viewBox="0 0 9 6"><rect width="9" height="6" fill="#74ACDF"/><rect y="2" width="9" height="2" fill="#fff"/><circle cx="4.5" cy="3" r=".7" fill="#F6B40E"/></svg>',
+  us: '<svg viewBox="0 0 19 10"><rect width="19" height="10" fill="#B22234"/><g fill="#fff"><rect y="0.77" width="19" height="0.77"/><rect y="2.31" width="19" height="0.77"/><rect y="3.85" width="19" height="0.77"/><rect y="5.38" width="19" height="0.77"/><rect y="6.92" width="19" height="0.77"/><rect y="8.46" width="19" height="0.77"/></g><rect width="7.6" height="5.38" fill="#3C3B6E"/></svg>',
+  br: '<svg viewBox="0 0 10 7"><rect width="10" height="7" fill="#009C3B"/><path d="M5 .8 9.2 3.5 5 6.2.8 3.5Z" fill="#FFDF00"/><circle cx="5" cy="3.5" r="1.5" fill="#002776"/></svg>',
+  it: '<svg viewBox="0 0 3 2"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg>',
+};
+
+const IMG_BASE = "img/";
+const img = (n) => (window.IMG_DATA && window.IMG_DATA[n]) || `${IMG_BASE}${n}.jpg`;
 
 // ---------- idioma ----------
 let lang = "es";
 try { lang = localStorage.getItem("lang") || (navigator.language.startsWith("es") ? "es" : "en"); } catch (e) {}
-const t = (k) => I18N[lang][k];
+const t = (k) => T[lang][k];
+const $ = (s) => document.querySelector(s);
 
+// ---------- render ----------
 function render() {
   document.documentElement.lang = lang;
-  document.getElementById("lang").textContent = lang === "es" ? "EN" : "ES";
+  $("#lang").textContent = lang === "es" ? "EN" : "ES";
   document.querySelectorAll("[data-i18n]").forEach((el) => (el.textContent = t(el.dataset.i18n)));
   document.querySelectorAll("[data-i18n-html]").forEach((el) => (el.innerHTML = t(el.dataset.i18nHtml)));
 
-  document.getElementById("featured").innerHTML = FEATURED.map((p, i) => `
-    <article class="project reveal">
-      <div>
-        <p class="project__num">0${i + 1}.</p>
-        <h3 class="project__title">${p.name}</h3>
-        <div class="project__body">${p[lang].map((s) => `<p>${s}</p>`).join("")}</div>
-        <div class="project__tags">${p.tags.map((x) => `<span class="tag">${x}</span>`).join("")}</div>
-        ${p.url ? `<a class="btn" href="${p.url}" target="_blank" rel="noopener">${t("feat.view")} ↗</a>`
-                : `<span class="note note--inline">${t("feat.private")}</span>`}
+  // sobre mí: una palabra por span para pintarlas con el scroll
+  $("#aboutText").innerHTML = t("about")
+    .replace(/[^\s*]+/g, (w) => `<span>${w}</span>`)
+    .replace(/\*([^*]+)\*/g, "<em>$1</em>");
+
+  $("#projects").innerHTML = PROJECTS.map((p, i) => `
+    <section class="proj${i % 2 ? " proj--flip" : ""}${p.light ? " proj--light" : ""}" style="--bg:${p.bg};--fg:${p.fg};--hl:${p.hl}">
+      <div class="proj__sticky">
+        <div class="proj__head">
+          <h2 class="proj__title">${p.name}</h2>
+          <a class="pill" href="${p.url}" target="_blank" rel="noopener">${t("view")} <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="proj__stage">
+          <div class="mock-browser">
+            <div class="mock-browser__bar"><i></i><i></i><i></i><span class="mock-browser__url">${p.domain}</span></div>
+            <div class="mock-browser__screen">${uniq(p.steps.map((s) => s.d)).map((d, k) => `<img class="shot${k ? "" : " on"}" data-shot="${d}" src="${img(d)}" alt="${p.name}, captura ${k + 1}" ${k ? 'loading="lazy"' : ""}>`).join("")}</div>
+          </div>
+          <div class="mock-phone"><div class="mock-phone__screen">${uniq(p.steps.map((s) => s.m)).map((m, k) => `<img class="shot${k ? "" : " on"}" data-shot="${m}" src="${img(m)}" alt="" ${k ? 'loading="lazy"' : ""}>`).join("")}</div></div>
+        </div>
       </div>
-      <a class="project__media" ${p.url ? `href="${p.url}" target="_blank" rel="noopener"` : ""}>
-        ${p.thumb ? `<img src="${ASSETS + p.thumb}" alt="${p.name}" loading="lazy" onerror="this.remove()">` : placeholder(p)}
-        ${(p.bubbles || []).map((b) => `<span class="bubble${parseFloat(b.x) > 45 ? " right" : ""}" style="left:${b.x};top:${b.y}">${b[lang]}</span>`).join("")}
-      </a>
-    </article>`).join("");
+      <div class="proj__steps">${p.steps.map((s, k) => `<div data-scene="step" data-p="${i}" data-s="${k}"></div>`).join("")}</div>
+    </section>`).join("");
 
-  document.getElementById("worklist").innerHTML = WORK.map((w) => `
-    <li><a ${w.url ? `href="${w.url}" target="_blank" rel="noopener"` : ""} data-thumb="${w.thumb || ""}">
-      <span class="worklist__name">${w.name}</span>
-      <span class="worklist__kind">${w.kind[lang]}</span>
-      <span class="worklist__year">${w.year || ""}</span>
-    </a></li>`).join("");
-
-  document.getElementById("stackGrid").innerHTML = STACK.map((s) => `
-    <div class="card reveal">
-      <h3>${lang === "en" && s.titleEn ? s.titleEn : s.title}</h3>
-      <p class="card__comment">${s[lang]}</p>
-      <div class="chips">${(lang === "en" && s.itemsEn ? s.itemsEn : s.items).map((x) => `<span class="chip">${x}</span>`).join("")}</div>
+  $("#stackList").innerHTML = STACK.map((g, gi) => `
+    <div class="stack__row">
+      <div><h3>${g[lang]}</h3><p>${lang === "es" ? g.noteEs : g.noteEn}</p></div>
+      <div class="stack__items">${g.items.map(([name, key, nameEn]) => `<button class="tech" data-g="${gi}">${icon(key)}<span>${lang === "en" && nameEn ? nameEn : name}</span></button>`).join("")}</div>
     </div>`).join("");
 
-  document.getElementById("langsGrid").innerHTML = LANGS.map((l, i) => `
-    <button class="langcard reveal" data-i="${i}">
-      <img class="langcard__flag" src="${ASSETS + l.flag}" alt="" onerror="this.style.visibility='hidden'">
-      <p class="langcard__name">${l[lang]}</p>
-      <p class="langcard__level">${lang === "es" ? l.lvlEs : l.lvlEn}</p>
+  $("#langList").innerHTML = LANGS.map((l, i) => `
+    <button class="lang" data-i="${i}">
+      ${FLAGS[l.flag]}
+      <p class="lang__name">${l[lang]}</p>
+      <p class="lang__lvl">${lang === "es" ? l.lvlEs : l.lvlEn}</p>
       <div class="meter">${[1, 2, 3, 4, 5].map((n) => `<i class="${n <= l.lvl ? "on" : ""}"></i>`).join("")}</div>
-      <p class="langcard__hello"></p>
     </button>`).join("");
 
-  document.getElementById("timeline").innerHTML = EXP.map((e) => `
-    <li class="reveal">
-      <span class="timeline__year">${e.year}</span>
-      <div><h3>${e[lang].role}</h3><p class="timeline__where">${e[lang].where}</p><p class="timeline__what">${e[lang].what}</p></div>
+  $("#expList").innerHTML = EXP.map((e) => `
+    <li>
+      <span class="exp__year">${e.year}</span>
+      <div><h3>${e[lang][0]}</h3><p class="exp__where">${typeof e.where === "string" ? e.where : e.where[lang]}</p></div>
+      <p class="exp__what">${e[lang][1]}</p>
     </li>`).join("");
 
-  observeReveals();
+  $("#workCount").textContent = `${WORK.length} ${t("projects")}`;
+  $("#workGrid").innerHTML = WORK.map((w) => `
+    <a class="card${w.big ? " big" : ""}" ${w.url ? `href="${w.url}" target="_blank" rel="noopener"` : ""}>
+      <div class="card__img">${w.fake
+        ? `<div class="card__fake"><span>La Cocina de las Marcas</span><b>87/100</b><span>${lang === "es" ? "Tu marca, en un puntaje" : "Your brand, in one score"}</span></div>`
+        : `<img src="${img(w.img)}" alt="${w.name}" loading="lazy">`}</div>
+      <div class="card__meta"><span>${w.name}</span><span>${w[lang]}</span></div>
+    </a>`).join("");
+
+  scenes = [...document.querySelectorAll("[data-scene]")];
+  current = null;
+  onScroll();
+}
+const uniq = (a) => [...new Set(a)];
+
+// ---------- personaje y globo ----------
+const buddy = $("#buddy"), bubble = $("#bubble"), bubbleText = $("#bubbleText");
+Character.mount($("#buddyCanvas"));
+let typing = null, mouthTimer = null;
+
+function say(text) {
+  clearInterval(typing); clearInterval(mouthTimer);
+  if (!text) { bubble.classList.remove("show"); Character.set({ mouth: "smile" }); return; }
+  const parts = text.split(/(\*\*[^*]+\*\*)/).filter(Boolean);
+  bubbleText.innerHTML = parts.map((p) => {
+    const hl = p.startsWith("**");
+    const chars = [...p.replace(/\*\*/g, "")].map((c) => `<span class="g">${c}</span>`).join("");
+    return hl ? `<mark>${chars}</mark>` : chars;
+  }).join("");
+  bubble.classList.add("show");
+  const spans = bubbleText.querySelectorAll(".g");
+  let i = 0;
+  mouthTimer = setInterval(() => Character.set({ mouth: Character.state.mouth === "open" ? "smile" : "open" }), 110);
+  typing = setInterval(() => {
+    for (let k = 0; k < 2 && i < spans.length; k++, i++) spans[i].classList.remove("g");
+    if (i % 4 === 0) blip();
+    if (i >= spans.length) { clearInterval(typing); clearInterval(mouthTimer); Character.set({ mouth: "smile" }); }
+  }, 32);
 }
 
-function placeholder(p) {
-  return `<div style="height:100%;display:grid;place-items:center;background:var(--paper-2)">
-    <div style="font-family:var(--display);font-weight:800;font-size:clamp(28px,4vw,48px);text-align:center;line-height:1">
-      ${p.client || p.name}<br><span style="font-family:var(--hand);font-weight:700;color:var(--accent)">87/100</span></div></div>`;
+function place(pos, acc) {
+  buddy.classList.remove("pos-left", "pos-right", "pos-avatar");
+  buddy.classList.add(`pos-${pos}`);
+  if (acc !== undefined && !dressed) Character.set({ acc });
 }
 
-document.getElementById("lang").addEventListener("click", () => {
+// ---------- escenas ----------
+let scenes = [], current = null, dressed = false;
+function sceneKey(el) { return el.dataset.scene === "step" ? `step-${el.dataset.p}-${el.dataset.s}` : el.dataset.scene; }
+
+function enter(el) {
+  const s = el.dataset.scene, S = t("say");
+  document.documentElement.style.setProperty("--hl", "var(--blue)");
+  if (s === "hero") { place("right", "none"); say(S.hero); }
+  else if (s === "about") { place("left", "none"); say(""); }
+  else if (s === "step") {
+    const p = PROJECTS[+el.dataset.p], step = p.steps[+el.dataset.s];
+    document.documentElement.style.setProperty("--hl", p.hl);
+    place(+el.dataset.p % 2 ? "right" : "left", p.acc);
+    say(step[lang]);
+    const proj = el.closest(".proj");
+    proj.querySelectorAll(".shot").forEach((im) => im.classList.toggle("on", im.dataset.shot === step.d || im.dataset.shot === step.m));
+  } else if (s === "contact") { place("right", "none"); say(S.contact); }
+  else { place("avatar", "none"); say(S[s]); }
+}
+
+function onScroll() {
+  const mid = innerHeight * 0.55;
+  let hit = null;
+  for (const el of scenes) {
+    const r = el.getBoundingClientRect();
+    if (r.top <= mid && r.bottom > mid) hit = el;
+  }
+  if (hit && sceneKey(hit) !== current) { current = sceneKey(hit); enter(hit); }
+
+  // texto de "sobre mí"
+  const about = $("#about"), words = about.querySelectorAll(".about__text span");
+  const r = about.getBoundingClientRect();
+  const prog = Math.min(1, Math.max(0, (-r.top + innerHeight * 0.3) / (r.height - innerHeight)));
+  const n = Math.round(prog * words.length * 1.1);
+  words.forEach((w, i) => w.classList.toggle("on", i < n));
+}
+let ticking = false;
+addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { ticking = false; onScroll(); }); } }, { passive: true });
+addEventListener("resize", onScroll);
+
+// ---------- agarrar al personaje ----------
+const canvas = $("#buddyCanvas");
+let hold = null;
+canvas.addEventListener("pointerdown", (e) => {
+  canvas.setPointerCapture(e.pointerId);
+  hold = { x: e.clientX, y: e.clientY };
+  buddy.classList.add("held");
+  canvas.style.transition = "none";
+  Character.set({ eyes: "happy" });
+  const g = t("say").grab; say(g[Math.floor(Math.random() * g.length)]);
+});
+canvas.addEventListener("pointermove", (e) => {
+  if (!hold) return;
+  const dx = e.clientX - hold.x, dy = e.clientY - hold.y;
+  canvas.style.transform = `translate(${dx}px, ${dy}px) rotate(${Math.max(-25, Math.min(25, dx / 8))}deg)`;
+});
+const drop = () => {
+  if (!hold) return;
+  hold = null; buddy.classList.remove("held");
+  canvas.style.transition = "transform .6s cubic-bezier(.3, 1.6, .5, 1)";
+  canvas.style.transform = "";
+  Character.set({ eyes: "open" });
+};
+canvas.addEventListener("pointerup", drop);
+canvas.addEventListener("pointercancel", drop);
+
+// ---------- vestir y truco ----------
+const OUTFITS = ["cap", "beanie", "cowboy", "glasses", "headset", "mate", "none"];
+let outfit = -1;
+$("#dress").addEventListener("click", () => {
+  outfit = (outfit + 1) % OUTFITS.length; dressed = OUTFITS[outfit] !== "none";
+  Character.set({ acc: OUTFITS[outfit] }); say(t("say").dress);
+});
+$("#trick").addEventListener("click", () => {
+  buddy.classList.remove("trick"); void buddy.offsetWidth; buddy.classList.add("trick");
+  Character.set({ eyes: "happy" }); setTimeout(() => Character.set({ eyes: "open" }), 1000);
+  say(t("say").trick);
+});
+
+// ---------- interacciones de las secciones ----------
+document.addEventListener("pointerover", (e) => {
+  const tech = e.target.closest(".tech");
+  if (tech && tech !== lastTech) {
+    lastTech = tech;
+    const g = STACK[tech.dataset.g];
+    say(`**${tech.textContent.trim()}**. ${lang === "es" ? g.noteEs : g.noteEn}`);
+  }
+});
+let lastTech = null;
+document.addEventListener("click", (e) => {
+  const l = e.target.closest(".lang");
+  if (l) say(LANGS[l.dataset.i].hello);
+});
+
+const mail = $("#mail");
+mail.addEventListener("mouseenter", () => say(t("say").copy));
+mail.addEventListener("click", async () => {
+  try { await navigator.clipboard.writeText(mail.dataset.mail); toast(t("copied")); say(`**${t("copied")}**`); }
+  catch (err) { const r = document.createRange(); r.selectNodeContents(mail); getSelection().removeAllRanges(); getSelection().addRange(r); }
+});
+
+function toast(msg) {
+  const el = $("#toast"); el.textContent = msg; el.classList.add("show");
+  clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove("show"), 1600);
+}
+
+$("#lang").addEventListener("click", () => {
   lang = lang === "es" ? "en" : "es";
   try { localStorage.setItem("lang", lang); } catch (e) {}
   render();
 });
 
-// ---------- reveal ----------
-const io = "IntersectionObserver" in window
-  ? new IntersectionObserver((entries) => entries.forEach((en) => en.isIntersecting && en.target.classList.add("in")), { threshold: 0.12 })
-  : null;
-function observeReveals() {
-  document.querySelectorAll(".reveal:not(.in)").forEach((el) => (io ? io.observe(el) : el.classList.add("in")));
+// ---------- sonido ----------
+let audio = null, soundOn = false;
+$("#sound").addEventListener("click", (e) => {
+  soundOn = !soundOn; e.currentTarget.setAttribute("aria-pressed", soundOn);
+  if (soundOn && !audio) audio = new (window.AudioContext || window.webkitAudioContext)();
+  blip();
+});
+function blip() {
+  if (!soundOn || !audio) return;
+  const o = audio.createOscillator(), g = audio.createGain();
+  o.type = "square"; o.frequency.value = 520 + Math.random() * 180;
+  g.gain.setValueAtTime(0.03, audio.currentTime); g.gain.exponentialRampToValueAtTime(0.0001, audio.currentTime + 0.06);
+  o.connect(g).connect(audio.destination); o.start(); o.stop(audio.currentTime + 0.07);
 }
 
-// ---------- toast ----------
-const toast = document.getElementById("toast");
-function say(msg) {
-  toast.textContent = msg;
-  toast.classList.add("show");
-  clearTimeout(say.t);
-  say.t = setTimeout(() => toast.classList.remove("show"), 1800);
-}
-
-// ---------- personaje arrastrable ----------
-const buddy = document.getElementById("buddy");
-const note = document.getElementById("buddyNote");
-let drag = null;
-buddy.addEventListener("pointerdown", (e) => {
-  buddy.setPointerCapture(e.pointerId);
-  const r = buddy.getBoundingClientRect();
-  drag = { dx: e.clientX - (r.left + r.width / 2), dy: e.clientY - (r.top + r.height / 2) };
-  buddy.classList.add("dragging");
-  const lines = t("buddy.grab");
-  note.textContent = lines[Math.floor(Math.random() * lines.length)];
-});
-buddy.addEventListener("pointermove", (e) => {
-  if (!drag) return;
-  const stage = buddy.parentElement.getBoundingClientRect();
-  buddy.style.left = `${e.clientX - stage.left - drag.dx}px`;
-  buddy.style.top = `${e.clientY - stage.top - drag.dy}px`;
-});
-buddy.addEventListener("pointerup", () => {
-  drag = null;
-  buddy.classList.remove("dragging");
-});
-
-// vuelve a su lugar si scrolleás de nuevo al hero
-let leftHero = false;
-addEventListener("scroll", () => {
-  if (scrollY > innerHeight) leftHero = true;
-  if (leftHero && scrollY < 40) {
-    leftHero = false;
-    buddy.style.left = buddy.style.top = "";
-    note.textContent = t("buddy.back");
-  }
-}, { passive: true });
-
-// ---------- truco y ropa ----------
-document.getElementById("trick").addEventListener("click", () => {
-  scrollTo({ top: 0 });
-  buddy.classList.remove("flip");
-  void buddy.offsetWidth;
-  buddy.classList.add("flip");
-  note.textContent = t("buddy.trick");
-});
-const HATS = ["🧢", "🎩", "👒", "🤠", "👑", ""];
-let hatIdx = HATS.length - 1;
-document.getElementById("dress").addEventListener("click", () => {
-  scrollTo({ top: 0 });
-  hatIdx = (hatIdx + 1) % HATS.length;
-  document.getElementById("hat").textContent = HATS[hatIdx];
-  note.textContent = t("buddy.dress");
-});
-
-// ---------- copiar mail ----------
-document.getElementById("mail").addEventListener("click", async (e) => {
-  const m = e.currentTarget.dataset.mail;
-  try { await navigator.clipboard.writeText(m); say(t("contact.copied")); }
-  catch (err) { location.href = `mailto:${m}`; }
-});
-
-// ---------- tarjetas de idioma ----------
-document.getElementById("langsGrid").addEventListener("click", (e) => {
-  const card = e.target.closest(".langcard");
-  if (!card) return;
-  card.classList.add("said");
-  card.querySelector(".langcard__hello").textContent = LANGS[card.dataset.i].hello;
-});
-
-// ---------- preview de imágenes en la lista ----------
-const peek = document.createElement("div");
-peek.className = "worklist__peek";
-peek.innerHTML = "<img alt=''>";
-document.body.appendChild(peek);
-const worklist = document.getElementById("worklist");
-worklist.addEventListener("pointermove", (e) => {
-  const a = e.target.closest("a");
-  if (!a || !a.dataset.thumb || e.pointerType !== "mouse") return peek.classList.remove("show");
-  peek.querySelector("img").src = ASSETS + a.dataset.thumb;
-  peek.style.left = `${e.clientX + 24}px`;
-  peek.style.top = `${e.clientY - 100}px`;
-  peek.classList.add("show");
-});
-worklist.addEventListener("pointerleave", () => peek.classList.remove("show"));
-
-document.getElementById("year").textContent = new Date().getFullYear();
+$("#year").textContent = new Date().getFullYear();
 render();
