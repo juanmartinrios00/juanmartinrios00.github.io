@@ -3,7 +3,7 @@
 const DETAILS = {
   dentiqly: {
     name: "Dentiqly", url: "https://dentiqly.com", domain: "dentiqly.com",
-    bg: "#cfe5ff", fg: "#0b1d3a", hl: "#1d4ed8",
+    bg: "#0045ff", fg: "#f3f1ea", hl: "#9fc0ff",
     shots: ["dentiqly-d0", "dentiqly-d2", "dentiqly-d1", "dentiqly-d5"], phones: ["dentiqly-m0", "dentiqly-m1", "dentiqly-m2"],
     stack: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "REST APIs"],
     es: {
@@ -11,7 +11,7 @@ const DETAILS = {
       lead: "Un SaaS para consultorios odontológicos: agenda online, historias clínicas, odontograma digital y recordatorios por WhatsApp, todo en un solo lugar.",
       body: [
         "Lo cofundé y participo en todo el ciclo: relevamiento con odontólogos, modelo de datos, backend, frontend y despliegue.",
-        "La idea es que un consultorio deje el papel y el WhatsApp manual sin tener que aprender un sistema complicado.",
+        "El objetivo es que un consultorio deje el papel y los recordatorios manuales sin tener que aprender un sistema complejo.",
       ],
       did: [
         "Diseñé el esquema relacional en PostgreSQL para pacientes, turnos, tratamientos e historias clínicas, con índices y restricciones de integridad.",
@@ -44,11 +44,11 @@ const DETAILS = {
       kind: "Sitio web · Consultora", role: "Diseño y desarrollo web", year: "",
       lead: "El sitio de una consultora de opinión pública y estrategia: estudios cuantitativos y cualitativos, posicionamiento y campañas.",
       body: [
-        "Tienen muchos productos distintos (RCP, Brújula Social, Pulso Consumo), así que el trabajo fue ordenar todo para que se entienda rápido qué hacen y dónde está cada cosa.",
+        "La consultora tiene varios productos propios (RCP, Brújula Social, Pulso Consumo), así que el objetivo fue ordenar el contenido para que se entienda rápido qué hacen y dónde encontrar cada cosa.",
       ],
       did: [
-        "Una home con mucha personalidad: el amarillo de la marca, tipografía grande y una animación de Medir, Interpretar y Orientar que se arma al scrollear.",
-        "Servicios en una lista con paneles “Leer más” que se despliegan, para no llenar la pantalla de texto.",
+        "Una home con identidad propia: el amarillo de la marca, tipografía grande y una animación de Medir, Interpretar y Orientar que acompaña el scroll.",
+        "Servicios organizados en paneles desplegables, para presentar mucha información sin saturar la pantalla.",
         "Una sección para cada indicador propio y otra con su presencia en medios.",
         "Contacto directo por mail, WhatsApp y X.",
       ],
@@ -57,11 +57,11 @@ const DETAILS = {
       kind: "Website · Consultancy", role: "Web design & development", year: "",
       lead: "The website for a public opinion and strategy consultancy: quantitative and qualitative research, positioning and campaigns.",
       body: [
-        "They have lots of different products (RCP, Brújula Social, Pulso Consumo), so the job was to organise everything so it's quick to understand what they do and where things are.",
+        "The consultancy has several products of its own (RCP, Brújula Social, Pulso Consumo), so the goal was to organise the content so visitors quickly understand what they do and where to find it.",
       ],
       did: [
-        "A home page with personality: the brand's yellow, big type and a Measure, Interpret, Guide animation that builds as you scroll.",
-        "Services in a list with “Read more” panels that unfold, so the screen isn't a wall of text.",
+        "A home page with a clear identity: the brand's yellow, large type and a Measure, Interpret, Guide animation that follows the scroll.",
+        "Services organised in expandable panels, to present a lot of information without crowding the screen.",
         "A section for each of their own indices and another for their media presence.",
         "Direct contact by email, WhatsApp and X.",
       ],
@@ -76,7 +76,7 @@ const DETAILS = {
       kind: "Sitio web · Tienda", role: "Diseño y desarrollo web", year: "",
       lead: "El sitio de Martín Virasoro, autor y creador del Método RAM: libros, audiolibros, cursos, podcast, charlas y retiros.",
       body: [
-        "Necesitaba un lugar donde mostrar todo lo que hace y, a la vez, vender sus productos sin intermediarios.",
+        "El objetivo era reunir toda su actividad en un solo sitio y, a la vez, vender sus productos sin intermediarios.",
       ],
       did: [
         "Tienda con WooCommerce para libros, audiolibros y su juego 365, con carrito y checkout.",
@@ -108,7 +108,7 @@ const DETAILS = {
       kind: "Sitio web · Real estate", role: "Diseño y desarrollo web", year: "",
       lead: "Seis residencias de lujo en Wildcat Mountain, West Lake Hills, Austin. Seis casas, una montaña.",
       body: [
-        "Un sitio para vender algo que se compra con los ojos: mucha imagen, textos cortos y siempre a un click de consultar.",
+        "Un sitio pensado para un producto que se elige por la imagen: fotografía protagonista, textos breves y la consulta siempre a un click.",
       ],
       did: [
         "Hero a pantalla completa con la arquitectura y el paisaje como protagonistas.",
@@ -121,7 +121,7 @@ const DETAILS = {
       kind: "Website · Real estate", role: "Web design & development", year: "",
       lead: "Six luxury residences on Wildcat Mountain, West Lake Hills, Austin. Six homes, one mountain.",
       body: [
-        "A site for something people buy with their eyes: lots of imagery, short copy and always one click from enquiring.",
+        "A site built for a product chosen on looks: photography up front, short copy and enquiries always one click away.",
       ],
       did: [
         "Full-screen hero with the architecture and landscape front and centre.",
@@ -193,7 +193,7 @@ const DETAILS = {
       lead: "Una app que diagnostica una marca: respondés un cuestionario y te devuelve un gráfico diamante con métricas de Branding y Naming.",
       body: [
         "La hicimos en un equipo de dos developers. Empezó como herramienta interna de la agencia y terminó siendo un producto que les ofrecen a sus clientes.",
-        "Es una app privada, así que no hay link público, pero te la muestro en una llamada.",
+        "Es una aplicación privada, por lo que no tiene link público. Puedo mostrarla en una entrevista.",
       ],
       did: [
         "Frontend en React: cuestionario multi-paso, validaciones y la visualización de resultados.",
@@ -207,7 +207,7 @@ const DETAILS = {
       lead: "An app that diagnoses a brand: you answer a questionnaire and get a diamond chart with Branding and Naming metrics.",
       body: [
         "We built it as a team of two developers. It started as an internal tool for the agency and became a product they offer to their clients.",
-        "It's a private app, so there's no public link, but I'm happy to demo it on a call.",
+        "It is a private application, so there is no public link. I can demo it in an interview.",
       ],
       did: [
         "React frontend: multi-step questionnaire, validation and the results chart.",

@@ -4,20 +4,20 @@
 const PROJECTS = [
   {
     slug: "dentiqly", name: "Dentiqly", url: "https://dentiqly.com", domain: "dentiqly.com",
-    bg: "#cfe5ff", fg: "#0b1d3a", hl: "#1d4ed8", light: true,
+    bg: "#0045ff", fg: "#f3f1ea", hl: "#0045ff",
     steps: [
       { d: "dentiqly-d0", m: "dentiqly-m0",
-        es: "Primero, **Dentiqly**. Un SaaS para clínicas dentales que cofundé.",
-        en: "First up, **Dentiqly**. A SaaS for dental clinics that I co-founded." },
+        es: "**Dentiqly**: un SaaS de gestión para consultorios odontológicos que cofundé.",
+        en: "**Dentiqly**: a management SaaS for dental practices that I co-founded." },
       { d: "dentiqly-d2", m: "dentiqly-m2",
-        es: "Hice el **modelo de datos**, las APIs en TypeScript y todo el panel.",
-        en: "I built the **data model**, the TypeScript APIs and the whole dashboard." },
+        es: "Diseñé el **modelo de datos**, las APIs REST en TypeScript y el panel de gestión.",
+        en: "I designed the **data model**, the TypeScript REST APIs and the management dashboard." },
       { d: "dentiqly-d1", m: "dentiqly-m1",
-        es: "Cada diente tiene su historia en un **odontograma interactivo**.",
-        en: "Every tooth has its own history in an **interactive odontogram**." },
+        es: "Incluye un **odontograma interactivo** con el historial de cada pieza dental.",
+        en: "It includes an **interactive odontogram** with the history of every tooth." },
       { d: "dentiqly-d5", m: "dentiqly-m0",
-        es: "Y los turnos se confirman solos por **WhatsApp**. Chau ausentes.",
-        en: "And appointments confirm themselves over **WhatsApp**. Bye no-shows." },
+        es: "Los pacientes reciben **recordatorios automáticos** por WhatsApp, lo que reduce las ausencias.",
+        en: "Patients get **automatic reminders** over WhatsApp, which cuts no-shows." },
     ],
   },
   {
@@ -25,17 +25,17 @@ const PROJECTS = [
     bg: "#e2ff3d", fg: "#111", hl: "#5a5f00", light: true,
     steps: [
       { d: "pulso-d0", m: "pulso-m0",
-        es: "Después, **Pulso Research**, una consultora de opinión pública.",
-        en: "Next, **Pulso Research**, a public opinion consultancy." },
+        es: "**Pulso Research**: el sitio de una consultora de opinión pública y estrategia.",
+        en: "**Pulso Research**: the website for a public opinion and strategy consultancy." },
       { d: "pulso-d2", m: "pulso-m2",
-        es: "Sus servicios van en una lista con **“Leer más”** que se despliega.",
-        en: "Their services sit in a list with **“Read more”** panels that unfold." },
+        es: "Organicé los servicios en una lista con **paneles desplegables** para facilitar la lectura.",
+        en: "I organised the services in a list with **expandable panels** to keep it easy to read." },
       { d: "pulso-d4", m: "pulso-m1",
-        es: "Esta me encanta: **Medir, Interpretar, Orientar** se arma mientras scrolleás.",
-        en: "My favourite bit: **Measure, Interpret, Guide** builds itself as you scroll." },
+        es: "La sección **Medir, Interpretar, Orientar** se anima a medida que el usuario avanza.",
+        en: "The **Measure, Interpret, Guide** section animates as the visitor scrolls." },
       { d: "pulso-d7", m: "pulso-m2",
-        es: "Y cada indicador tiene su lugar: **RCP, Brújula Social y Pulso Consumo**.",
-        en: "Each index gets its own spot: **RCP, Brújula Social and Pulso Consumo**." },
+        es: "Cada indicador propio tiene su sección: **RCP, Brújula Social y Pulso Consumo**.",
+        en: "Each of their indices has its own section: **RCP, Brújula Social and Pulso Consumo**." },
     ],
   },
   {
@@ -43,17 +43,17 @@ const PROJECTS = [
     bg: "#24443a", fg: "#f3f1ea", hl: "#d9b26a",
     steps: [
       { d: "virasoro-d0", m: "virasoro-m0",
-        es: "Este es de **Martín Virasoro**, autor y creador del Método RAM.",
-        en: "This one is for **Martín Virasoro**, author and creator of the RAM Method." },
+        es: "**Martín Virasoro**: el sitio de un autor y creador del Método RAM.",
+        en: "**Martín Virasoro**: the website for an author and creator of the RAM Method." },
       { d: "virasoro-d1", m: "virasoro-m1",
-        es: "Tiene **tienda propia**: libros, audiolibros y hasta su juego 365.",
-        en: "It has **its own shop**: books, audiobooks, even his 365 game." },
+        es: "Incluye una **tienda online** con WooCommerce para libros, audiolibros y juegos.",
+        en: "It includes an **online shop** built with WooCommerce for books, audiobooks and games." },
       { d: "virasoro-d2", m: "virasoro-m2",
-        es: "Cursos, podcast y retiros, **cada cosa con su página**.",
-        en: "Courses, podcast and retreats, **each with its own page**." },
+        es: "Cursos, podcast y retiros, **cada línea con su propia página**.",
+        en: "Courses, podcast and retreats, **each line with its own page**." },
       { d: "virasoro-d5", m: "virasoro-m0",
-        es: "Y abajo, su **Instagram** y el newsletter para no perderse nada.",
-        en: "At the bottom, his **Instagram** and the newsletter so you miss nothing." },
+        es: "Al pie, integración con **Instagram** y suscripción al newsletter.",
+        en: "In the footer, an **Instagram** feed and newsletter sign-up." },
     ],
   },
   {
@@ -61,14 +61,14 @@ const PROJECTS = [
     bg: "#e9dfcf", fg: "#1c2a26", hl: "#a8673b", light: true,
     steps: [
       { d: "wildcat-d0", m: "wildcat-m0",
-        es: "Último: **Wildcat Club**, seis residencias de lujo en Austin, Texas. Yeehaw.",
-        en: "Last one: **Wildcat Club**, six luxury homes in Austin, Texas. Yeehaw." },
+        es: "**Wildcat Club**: seis residencias de lujo en Austin, Texas.",
+        en: "**Wildcat Club**: six luxury residences in Austin, Texas." },
       { d: "wildcat-d1", m: "wildcat-m1",
-        es: "Un **masterplan** en 3D para ver dónde cae cada casa en la montaña.",
-        en: "A 3D **masterplan** shows where each house sits on the mountain." },
+        es: "Un **masterplan en 3D** muestra la ubicación de cada residencia.",
+        en: "A **3D masterplan** shows where each residence sits." },
       { d: "wildcat-d2", m: "wildcat-m2",
-        es: "Y las seis casas en un **slider**, con su arquitecto y los metros.",
-        en: "And all six homes in a **slider**, with architect and square feet." },
+        es: "Las seis residencias se presentan en un **slider** con arquitecto y superficie.",
+        en: "All six residences are shown in a **slider** with architect and floor area." },
     ],
   },
 ];
@@ -97,10 +97,10 @@ const STACK = [
 ];
 
 const LANGS = [
-  { flag: "es", es: "Español", en: "Spanish", lvl: 5, lvlEs: "Nativo", lvlEn: "Native", hello: "¡Hola! ¿Tomamos unos mates?" },
-  { flag: "us", es: "Inglés", en: "English", lvl: 4, lvlEs: "Avanzado · C1 Cambridge", lvlEn: "Advanced · C1 Cambridge", hello: "Hi! Let's build **something cool**." },
-  { flag: "br", es: "Portugués", en: "Portuguese", lvl: 3, lvlEs: "Intermedio", lvlEn: "Intermediate", hello: "Oi! **Tudo bem**?" },
-  { flag: "it", es: "Italiano", en: "Italian", lvl: 3, lvlEs: "Intermedio", lvlEn: "Intermediate", hello: "Ciao! **Come va**?" },
+  { flag: "es", es: "Español", en: "Spanish", lvl: 5, lvlEs: "Nativo", lvlEn: "Native", hello: "¡Hola! **Encantado** de conocerte." },
+  { flag: "us", es: "Inglés", en: "English", lvl: 4, lvlEs: "Avanzado · C1 Cambridge", lvlEn: "Advanced · C1 Cambridge", hello: "Hi! Nice to **meet you**." },
+  { flag: "br", es: "Portugués", en: "Portuguese", lvl: 3, lvlEs: "Intermedio", lvlEn: "Intermediate", hello: "Olá! **Muito prazer**." },
+  { flag: "it", es: "Italiano", en: "Italian", lvl: 3, lvlEs: "Intermedio", lvlEn: "Intermediate", hello: "Ciao! **Piacere** di conoscerti." },
 ];
 
 const EXP = [
@@ -116,28 +116,28 @@ const EXP = [
 
 const T = {
   es: {
-    role: "Full stack developer", status: "En búsqueda de trabajo", cta: "Contratame",
-    title: "<b>Busco equipo<br>para construir</b><br><i>cosas que andan.</i>",
+    role: "Full stack developer", status: "En búsqueda de trabajo", cta: "Contacto",
+    title: "<b>Busco equipo<br>para construir</b><br><i>productos reales.</i>",
     about: "Soy un desarrollador full stack en Buenos Aires y busco *sumarme a un equipo de producto*, part time o full time. Desde 2023 hice webs, tiendas y sistemas para clientes, y cofundé un SaaS. Me gusta trabajar de la base de datos a la interfaz, aprender rápido y que lo que hago se vea tan bien como funciona.",
     "stack.title": "Mi stack", "stack.count": "",
     "langs.title": "Idiomas", "langs.count": "4 idiomas",
     "exp.title": "Experiencia", "exp.count": "",
     "work.title": "Todo el trabajo", view: "Ver proyecto",
     d: { back: "Volver", role: "Rol", type: "Tipo", stack: "Stack", site: "Ver el sitio", did: "Qué hice", next: "Siguiente proyecto", shots: "Capturas" },
-    "contact.title": "¿Buscás un dev?", "contact.sub": "Disponibilidad inmediata para sumarme a tu equipo, part time o full time, remoto o híbrido.",
+    "contact.title": "¿Buscás un desarrollador?", "contact.sub": "Disponibilidad inmediata para sumarme a tu equipo, part time o full time, remoto o híbrido.",
     copied: "¡Copiado!", projects: "proyectos", available: "Disponible para trabajar",
     say: {
-      hero: "Hola, soy **Juan** y estoy en búsqueda de trabajo. Bajá que te muestro qué sé hacer.",
-      stack: "Front, back y datos. Esto es lo que uso **todos los días**.",
-      langs: "Hablo **4 idiomas**. Tocá uno y te saludo.",
-      exp: "Trabajando y estudiando en la **UTN** al mismo tiempo.",
-      work: "Todo esto lo hice yo. Imaginate en **tu equipo**.",
-      contact: "Si llegaste hasta acá, **hablemos**.",
-      copy: "Mandame un mail y te contesto en el día. **Click** y se copia.",
+      hero: "Hola, soy **Juan**, desarrollador full stack. Te muestro algunos de mis proyectos.",
+      stack: "Las tecnologías con las que **trabajo** en front, back y datos.",
+      langs: "Hablo **4 idiomas**. Seleccioná uno para ver un saludo.",
+      exp: "Trabajo mientras curso la **Tecnicatura en Programación** en la UTN.",
+      work: "Una selección de **proyectos** en los que trabajé.",
+      contact: "Si mi perfil te interesa, **escribime**.",
+      copy: "Respondo dentro del día. **Hacé click** para copiar el mail.",
     },
   },
   en: {
-    role: "Full stack developer", status: "Open to work", cta: "Hire me",
+    role: "Full stack developer", status: "Open to work", cta: "Get in touch",
     title: "<b>Looking for<br>a team to build</b><br><i>things that work.</i>",
     about: "I'm a full stack developer in Buenos Aires looking to *join a product team*, part time or full time. Since 2023 I've built websites, shops and systems for clients, and co-founded a SaaS. I like working from the database to the interface, learning fast, and making things look as good as they work.",
     "stack.title": "My stack", "stack.count": "",
@@ -145,16 +145,16 @@ const T = {
     "exp.title": "Experience", "exp.count": "",
     "work.title": "All work", view: "View project",
     d: { back: "Back", role: "Role", type: "Type", stack: "Stack", site: "Visit the site", did: "What I did", next: "Next project", shots: "Screens" },
-    "contact.title": "Need a dev?", "contact.sub": "Available right away to join your team, part time or full time, remote or hybrid.",
+    "contact.title": "Looking for a developer?", "contact.sub": "Available right away to join your team, part time or full time, remote or hybrid.",
     copied: "Copied!", projects: "projects", available: "Open to work",
     say: {
-      hero: "Hi, I'm **Juan** and I'm looking for work. Scroll down to see what I can do.",
-      stack: "Front, back and data. This is what I use **every day**.",
-      langs: "I speak **4 languages**. Tap one and I'll say hi.",
-      exp: "Working and studying at **UTN** at the same time.",
-      work: "I built all of this. Picture me on **your team**.",
-      contact: "Made it this far? Let's **talk**.",
-      copy: "Email me and I'll reply the same day. **Click** to copy.",
+      hero: "Hi, I'm **Juan**, a full stack developer. Here are some of my projects.",
+      stack: "The technologies I **work with** across front end, back end and data.",
+      langs: "I speak **4 languages**. Select one to see a greeting.",
+      exp: "I work while studying **Programming** at UTN.",
+      work: "A selection of **projects** I have worked on.",
+      contact: "If my profile fits, **get in touch**.",
+      copy: "I reply within a day. **Click** to copy the address.",
     },
   },
 };
@@ -438,8 +438,13 @@ let lastDrop = null, trailIdx = 0;
 if (matchMedia("(pointer: fine)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
   hero.addEventListener("pointermove", (e) => {
     if (e.target.closest(".buddy, .pill, .langswitch, .status")) return;
+    // solo en la franja azul entre el nombre y el título, a la izquierda del personaje
     const r = hero.getBoundingClientRect();
+    const top = $(".hero__top").getBoundingClientRect().bottom - r.top + 40;
+    const bottom = $(".hero__title").getBoundingClientRect().top - r.top - 20;
+    const right = Math.min(buddy.getBoundingClientRect().left, bubble.getBoundingClientRect().left) - r.left - 40;
     const x = e.clientX - r.left, y = e.clientY - r.top;
+    if (y < top || y > bottom || x > right) return;
     if (lastDrop && Math.hypot(x - lastDrop.x, y - lastDrop.y) < 90) return;
     lastDrop = { x, y };
     const el = document.createElement("span");
