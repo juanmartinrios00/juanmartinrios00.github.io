@@ -232,7 +232,7 @@ function render() {
     <button class="lang" data-i="${i}">
       <span class="lang__flag">${FLAGS[l.flag]}</span>
       <span class="lang__name">${l[lang]}</span>
-      <span class="lang__hello" aria-hidden="true">${l.hello.replace(/\*\*/g, "")}</span>
+      <span class="lang__hello" aria-hidden="true">${l.hello.replace(/\*\*([^*]+)\*\*/g, "<mark>$1</mark>")}</span>
       <span class="lang__lvl">${lang === "es" ? l.lvlEs : l.lvlEn}<span class="meter">${[1, 2, 3, 4, 5].map((n) => `<i class="${n <= l.lvl ? "on" : ""}"></i>`).join("")}</span></span>
     </button>`).join("");
 
@@ -286,6 +286,7 @@ function say(text) {
 function place(pos) {
   buddy.classList.remove("pos-left", "pos-right", "pos-avatar");
   buddy.classList.add(`pos-${pos}`);
+  Character.set({ style: pos === "avatar" ? "mono" : "pixel" });
 }
 
 // ---------- escenas ----------

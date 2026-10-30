@@ -5,7 +5,7 @@
 const Character = (() => {
   const ANIMATED = false;
   const FRAMES = ANIMATED ? { base: "juan-base", blink: "juan-blink", wave: "juan-wave", talk: "juan-talk" } : { base: "juan-base", talk: "juan-talk" };
-  const SIZE = { color: 640, pixel: 440 };
+  const SIZE = { color: 640, pixel: 440, mono: 640 };
   const INK = [17, 17, 17], PAPER = [243, 241, 234];
 
   const BAYER = [
@@ -44,6 +44,14 @@ const Character = (() => {
         d[i] = col[0]; d[i + 1] = col[1]; d[i + 2] = col[2]; d[i + 3] = 255;
       }
       g.putImageData(id, 0, 0);
+    } else if (style === "mono") {
+      // blanco y negro liso, sin dither: para el avatar chico, donde el pixel no deja ver la cara
+      const id = g.getImageData(0, 0, s, s), d = id.data;
+      for (let i = 0; i < d.length; i += 4) {
+        const l = Math.min(255, Math.max(0, ((d[i] * 0.3 + d[i + 1] * 0.59 + d[i + 2] * 0.11) - 128) * 1.15 + 140));
+        d[i] = d[i + 1] = d[i + 2] = l;
+      }
+      g.putImageData(id, 0, 0);
     }
     return (cache[key] = c);
   }
@@ -62,7 +70,7 @@ const Character = (() => {
     if (out.width !== s) { out.width = out.height = s; }
     o.clearRect(0, 0, s, s);
     o.drawImage(processed(frameName(), state.style), 0, 0);
-    out.style.imageRendering = state.style === "color" ? "auto" : "pixelated";
+    out.style.imageRendering = state.style === "pixel" ? "pixelated" : "auto";
   }
 
   function load(src) {

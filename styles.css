@@ -197,14 +197,15 @@ h1, h2, h3 { margin: 0; font-stretch: 112%; letter-spacing: -.035em; line-height
 .lang__name { font-size: clamp(38px, 5vw, 72px); font-weight: 600; font-stretch: 112%; letter-spacing: -.035em; line-height: 1; transition: opacity .25s; }
 .lang__hello {
   position: absolute; left: 78px; top: 50%; translate: 0 -50%; font-size: clamp(26px, 3.4vw, 48px); font-weight: 300; font-stretch: 108%;
-  letter-spacing: -.02em; color: var(--blue); opacity: 0; pointer-events: none; white-space: nowrap; transition: opacity .25s;
+  letter-spacing: -.02em; color: var(--ink); opacity: 0; pointer-events: none; white-space: nowrap; transition: opacity .25s;
 }
 .lang:hover .lang__name, .lang:focus-visible .lang__name { opacity: 0; }
 .lang:hover .lang__hello, .lang:focus-visible .lang__hello { opacity: 1; }
+.lang__hello mark { background: var(--lime); color: var(--ink); padding: 0 .14em; border-radius: 8px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .lang__lvl { display: grid; justify-items: end; gap: 8px; color: var(--muted); font-size: 14px; }
 .meter { display: flex; gap: 5px; width: 120px; }
 .meter i { flex: 1; height: 7px; border-radius: 4px; background: #e2dfd6; }
-.meter i.on { background: var(--blue); }
+.meter i.on { background: var(--lime); }
 @media (max-width: 760px) {
   .lang { gap: 14px; } .lang__flag { width: 40px; height: 40px; } .lang__hello { left: 54px; white-space: normal; font-size: 22px; }
   .meter { width: 70px; }
@@ -214,7 +215,7 @@ h1, h2, h3 { margin: 0; font-stretch: 112%; letter-spacing: -.035em; line-height
 .exp li { display: grid; grid-template-columns: 140px minmax(0, 1fr) minmax(0, 1.2fr); gap: 24px; padding: 26px 0; border-top: 1px solid rgba(0, 0, 0, .12); align-items: baseline; }
 .exp__year { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 15px; }
 .exp h3 { font-size: clamp(24px, 2.4vw, 34px); }
-.exp__where { color: var(--blue); font-weight: 600; font-size: 15px; margin: 8px 0 0; }
+.exp__where { display: inline-block; background: var(--lime); color: var(--ink); font-weight: 600; font-size: 15px; margin: 10px 0 0; padding: 2px 8px; border-radius: 6px; }
 .exp__what { margin: 0; color: #3e3c37; }
 @media (max-width: 760px) { .exp li { grid-template-columns: 1fr; gap: 6px; } }
 
