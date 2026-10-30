@@ -10,7 +10,7 @@
   --font: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --gutter: clamp(16px, 3vw, 44px);
   --shadow: 4px 4px 0 var(--ink);
-  --hl: var(--blue);
+  --hl: var(--ink); --hlbg: var(--lime);
 }
 
 * { box-sizing: border-box; }
@@ -79,7 +79,7 @@ h1, h2, h3 { margin: 0; font-stretch: 112%; letter-spacing: -.035em; line-height
 }
 .about__text span { opacity: .14; transition: opacity .25s; }
 .about__text span.on { opacity: 1; }
-.about__text em { font-style: normal; color: var(--blue); }
+.about__text em { font-style: normal; background: var(--lime); color: var(--ink); padding: 0 .12em; border-radius: 6px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 @media (max-width: 760px) { .about__sticky { align-items: flex-start; padding-top: 12vh; } .about__text { margin-right: 0; } }
 
 /* ---------- personaje ---------- */
@@ -94,7 +94,7 @@ h1, h2, h3 { margin: 0; font-stretch: 112%; letter-spacing: -.035em; line-height
 .buddy.pos-left { --bx: 2vw; }
 .buddy.pos-avatar { --bw: 86px; --bx: var(--gutter); bottom: 20px; }
 .buddy__frame { transition: border-radius .4s, box-shadow .4s; }
-.buddy.pos-avatar .buddy__frame { border-radius: 50%; overflow: hidden; background: var(--ink); box-shadow: 0 0 0 3px var(--paper), 0 0 0 6px var(--blue); aspect-ratio: 1; }
+.buddy.pos-avatar .buddy__frame { border-radius: 50%; overflow: hidden; background: var(--ink); box-shadow: 0 0 0 3px var(--paper), 0 0 0 6px var(--lime); aspect-ratio: 1; }
 .buddy.pos-avatar .buddy__canvas { transform-origin: 54% 24%; transform: translate(-4%, 32%) scale(2.1); }
 .buddy__canvas {
   display: block; width: 100%; height: auto; aspect-ratio: 1; cursor: grab;
@@ -117,7 +117,7 @@ h1, h2, h3 { margin: 0; font-stretch: 112%; letter-spacing: -.035em; line-height
 }
 .bubble.show { opacity: 1; scale: 1; }
 .bubble .g { opacity: .22; }
-.bubble mark { background: none; color: var(--hl); }
+.bubble mark { background: var(--hlbg); color: var(--hl); padding: 0 .12em; border-radius: 5px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .pos-left .bubble { left: 4%; translate: 0 0; transform-origin: 20% 100%; }
 .pos-left .bubble::after { left: 30%; }
 .pos-avatar .bubble { bottom: 14px; left: calc(100% + 18px); translate: 0 0; font-size: 16px; padding: 12px 16px; transform-origin: 0 100%; max-width: min(320px, 70vw); }

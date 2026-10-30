@@ -4,7 +4,7 @@
 const PROJECTS = [
   {
     slug: "dentiqly", name: "Dentiqly", url: "https://dentiqly.com", domain: "dentiqly.com",
-    bg: "#0045ff", fg: "#f3f1ea", hl: "#0045ff",
+    bg: "#0045ff", fg: "#f3f1ea",
     steps: [
       { d: "dentiqly-d0", m: "dentiqly-m0",
         es: "**Dentiqly**: un SaaS de gestión para consultorios odontológicos que cofundé.",
@@ -205,7 +205,7 @@ function render() {
     .replace(/\*([^*]+)\*/g, "<em>$1</em>");
 
   $("#projects").innerHTML = PROJECTS.map((p, i) => `
-    <section class="proj${i % 2 ? " proj--flip" : ""}${p.light ? " proj--light" : ""}" style="--bg:${p.bg};--fg:${p.fg};--hl:${p.hl}">
+    <section class="proj${i % 2 ? " proj--flip" : ""}${p.light ? " proj--light" : ""}" style="--bg:${p.bg};--fg:${p.fg}">
       <div class="proj__sticky">
         <div class="proj__head">
           <h2 class="proj__title">${p.name}</h2>
@@ -294,12 +294,13 @@ function sceneKey(el) { return el.dataset.scene === "step" ? `step-${el.dataset.
 
 function enter(el) {
   const s = el.dataset.scene, S = t("say");
-  document.documentElement.style.setProperty("--hl", "var(--blue)");
+  const root = document.documentElement.style;
+  root.removeProperty("--hl"); root.removeProperty("--hlbg");
   if (s === "hero") { place("right"); say(S.hero); Character.wave(1400); }
   else if (s === "about") { place("left"); say(""); }
   else if (s === "step") {
     const p = PROJECTS[+el.dataset.p], step = p.steps[+el.dataset.s];
-    document.documentElement.style.setProperty("--hl", p.hl);
+    if (p.hl) { root.setProperty("--hl", p.hl); root.setProperty("--hlbg", "transparent"); }
     place(+el.dataset.p % 2 ? "right" : "left");
     say(step[lang]);
     const proj = el.closest(".proj");
