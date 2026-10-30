@@ -1,9 +1,112 @@
-<html>
-
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juan Martín Rios · Full stack developer</title>
+  <meta name="description" content="Juan Martín Rios, full stack developer en Buenos Aires. Full stack developer buscando sumarse a un equipo de producto.">
+  <meta name="theme-color" content="#82ff28">
+  <meta property="og:title" content="Juan Martín Rios · Full stack developer">
+  <meta property="og:description" content="Full stack developer buscando sumarse a un equipo de producto.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%232f56f0'/><text x='50' y='70' font-size='60' text-anchor='middle' font-family='Arial' font-weight='700' fill='white'>J</text></svg>">
+</head>
 <body>
-  <h1>YOUR NAME</h1>
-  <p>Welcome to my website!</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
-</body>
+  <!-- personaje fijo: se mueve de lugar según la sección -->
+  <div class="buddy pos-right" id="buddy">
+    <div class="bubble" id="bubble" aria-live="polite"><span id="bubbleText"></span></div>
+    <div class="buddy__frame"><canvas class="buddy__canvas" id="buddyCanvas" role="img" aria-label="Juan en versión anime, saludando"></canvas></div>
+  </div>
 
+  <!-- HERO -->
+  <header class="hero" data-scene="hero">
+    <div class="hero__top">
+      <div class="hero__name"><strong>Juan Martín Rios</strong><span data-i18n="role">Full stack developer</span><a class="status" href="#contacto"><i aria-hidden="true"></i><span data-i18n="status">En búsqueda de trabajo</span></a></div>
+      <div class="hero__actions">
+        <div class="langswitch" role="group" aria-label="Idioma / Language">
+          <button data-lang="es" aria-label="Español"></button>
+          <button data-lang="en" aria-label="English"></button>
+        </div>
+        <a href="#contacto" class="pill"><span data-i18n="cta">Contratame</span> <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+    <h1 class="hero__title" data-i18n-html="title"></h1>
+  </header>
+
+  <!-- SOBRE MÍ: el texto se va pintando con el scroll -->
+  <section class="about" data-scene="about" id="about">
+    <div class="about__sticky">
+      <p class="about__text" id="aboutText"></p>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <main id="projects"></main>
+
+  <!-- STACK -->
+  <section class="block" data-scene="stack" id="stack">
+    <div class="block__head">
+      <h2 data-i18n="stack.title">Mi stack</h2>
+      <p class="block__count" data-i18n="stack.count"></p>
+    </div>
+    <div class="stack" id="stackList"></div>
+  </section>
+
+  <!-- IDIOMAS -->
+  <section class="block" data-scene="langs" id="idiomas">
+    <div class="block__head">
+      <h2 data-i18n="langs.title">Idiomas</h2>
+      <p class="block__count" data-i18n="langs.count"></p>
+    </div>
+    <div class="langs" id="langList"></div>
+  </section>
+
+  <!-- EXPERIENCIA -->
+  <section class="block" data-scene="exp" id="experiencia">
+    <div class="block__head">
+      <h2 data-i18n="exp.title">Experiencia</h2>
+      <p class="block__count" data-i18n="exp.count"></p>
+    </div>
+    <ol class="exp" id="expList"></ol>
+  </section>
+
+  <!-- TODO EL TRABAJO -->
+  <section class="block" data-scene="work" id="trabajo">
+    <div class="block__head">
+      <h2 data-i18n="work.title">Todo el trabajo</h2>
+      <p class="block__count" id="workCount"></p>
+    </div>
+    <div class="grid" id="workGrid"></div>
+  </section>
+
+  <!-- CONTACTO -->
+  <footer class="contact" data-scene="contact" id="contacto">
+    <div class="contact__main">
+      <h2 data-i18n="contact.title">¿Tenés un proyecto?</h2>
+      <p class="contact__sub" data-i18n="contact.sub"></p>
+      <button class="contact__mail" id="mail" data-mail="riosjuanm10@gmail.com">riosjuanm10@gmail.com</button>
+    </div>
+    <div class="contact__foot">
+      <div class="contact__links">
+        <a href="https://linkedin.com/in/juan-martin-rios" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+        <a href="https://github.com/juanmartinrios00" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+        <a href="assets/Juan%20Martin%20Rios%20-%20CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="contact__small">
+        <span>© <span id="year"></span> Juan Martín Rios</span>
+        <span data-i18n="available">Disponible para trabajar</span>
+      </div>
+    </div>
+  </footer>
+
+  <article class="detail" id="detail" hidden></article>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="icons.js"></script>
+  <script src="details.js"></script>
+  <script src="character.js"></script>
+  <script src="main.js"></script>
+</body>
 </html>
